@@ -22,8 +22,8 @@
 .p-matrix .p-confirmed{opacity:1;outline:2px solid #82704f;outline-offset:-2px;}
 .p-matrix-check{position:absolute;right:3px;top:2px;font-size:10px;}
 .p-matrix .p-missing{outline:2px solid #b66f61;outline-offset:-2px;}
-.p-matrix-legend{display:flex;flex-wrap:wrap;gap:3px;margin:8px 0;}
-.p-matrix-legend span{font-size:11px;font-weight:700;padding:4px 6px;border-radius:4px;}
+
+
 .p-board .p-cards{grid-template-columns:repeat(var(--count),minmax(0,1fr));gap:5px;}
 .p-board .p-card{aspect-ratio:auto;height:clamp(78px,8vw,111px);padding:4px 3px;font-size:11px;}
 .p-board .p-card img{max-height:55%;width:82%;}
@@ -52,7 +52,10 @@
 .p-board .p-matrix .person img{width:15px;height:15px;}
 .p-board .p-matrix .person{font-size:10px;line-height:1;}
 .p-board .p-matrix .person small{font-size:8px;}
-.p-board .p-matrix-legend{margin:5px 0;}
+
 .p-board .p-center{justify-content:center;gap:12px;}
 @media(max-width:850px){#pairingDialog{--p-card-w:82px;--p-card-h:98px;}.p-board .p-layout{grid-template-columns:minmax(0,1fr);gap:10px;}.p-board .p-matrix td,.p-board .p-matrix th{height:42px;}}
 @media(max-width:520px){#pairingDialog{--p-card-w:62px;--p-card-h:82px;}.p-board .p-cards,.p-board .p-cards[data-count='8']{gap:5px;}.p-board .p-lane{grid-template-columns:var(--p-card-w) 32px var(--p-card-w) var(--p-card-w);gap:5px;}.p-board .p-matrix-panel{padding:5px;}.p-board .p-matrix .person{font-size:9px;}.p-board .p-center{gap:8px;}}
+
+/* v0.9.14 — les cartes centrales modifiables suivent les mêmes règles que le pool. */
+.p-card.p-central-action:not(:disabled){cursor:pointer;}

@@ -1,3 +1,12 @@
+MISE À JOUR 0.9.14 — cliquer sur un défenseur ou attaquant sélectionné au centre permet de le retirer avant validation de son étape. Les choix validés restent protégés ; bouton Retour pour revenir à une étape précédente. Aucun SQL.
+
+MISE À JOUR 0.9.13 — suppression des légendes de couleurs redondantes dans les deux matrices. Valeurs, couleurs, indication des cases manquantes et états des cartes conservés. Aucun SQL.
+
+MISE À JOUR 0.9.12 — résolution des conflits de synchronisation
+Fenêtre avec ronde, adversaire et versions locale/serveur ; choix explicite, report possible. Vérification du timestamp serveur avant écriture ; conflit renouvelé si modification concurrente. File locale et sessions conservées. Aucun SQL supplémentaire après migration 06.
+
+MISE À JOUR 0.9.11 — noms anglais des déploiements et objectifs, y compris les badges de ronde. Objectifs secondaires déjà en anglais dans le code ; pas de réintroduction de leur saisie. Interface française inchangée. Aucun SQL.
+
 MISE À JOUR 0.9.10 — matrice entre les deux rangées de cartes, à gauche des deux zones centrales sur ordinateur. Cartes de dimensions constantes au fil des cycles, animations dorées inchangées. Aucun SQL.
 
 MISE À JOUR 0.9.9 — matrice intégrée et cartes neutres
