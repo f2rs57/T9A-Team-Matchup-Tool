@@ -1,3 +1,12 @@
+MISE À JOUR 0.9.10 — matrice entre les deux rangées de cartes, à gauche des deux zones centrales sur ordinateur. Cartes de dimensions constantes au fil des cycles, animations dorées inchangées. Aucun SQL.
+
+MISE À JOUR 0.9.9 — matrice intégrée et cartes neutres
+Matrice à gauche du tapis sur écran large, au-dessus sur mobile. Actualisation des estimations toutes les 5 s lorsque le navigateur est visible (requête ciblée, rechargement complet toutes les 15 s). Recommandation précédente provisoire uniquement si les données changent sans changer la phase ou la stratégie ; aucune suggestion si une estimation requise est manquante. Matchs validés conservés. Aucun SQL supplémentaire après migration 06.
+
+MISE À JOUR 0.9.8 — reprise des tournois et renouvellement des accès
+La migration SQL 06 de la v0.9.7 reste requise si elle n’a pas encore été exécutée. Aucune migration supplémentaire.
+L’administrateur ouvre un tournoi existant depuis la liste ou la fenêtre de gestion, puis choisit une équipe et renouvelle son lien capitaine. Les données synchronisées restent en base. Le capitaine peut renouveler son lien commun. Les recommandations et appariements locaux ne sont pas synchronisés entre appareils.
+
 MISE À JOUR 0.9.7 — reconnexion et sept estimations
 IMPORTANT : exécuter T9A_06_reconnexion_estimations_v097.sql dans Supabase AVANT de déployer ce ZIP. Synchroniser les estimations de tous les appareils avant la migration. Ne pas mettre le SQL sur GitHub.
 Liens capitaine et équipe réutilisables jusqu’à révocation ou renouvellement. Les accès joueur sont transférés à la nouvelle session lors de la sélection du profil ; le lien commun ne permet pas de prendre le profil capitaine. Les liens révoqués ne sont pas restaurés. Un lien non récupérable doit être régénéré. Le lien commun ne prouve pas l’identité ; conserver les liens privés. La révocation du lien n’efface pas les sessions déjà actives, à révoquer séparément. Les données hors ligne déjà copiées ne sont pas effaçables à distance. Le suivi du pairing reste local par session, non récupérable après changement de session ; les estimations synchronisées sont conservées.

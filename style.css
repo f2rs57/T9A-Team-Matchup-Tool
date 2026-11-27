@@ -71,3 +71,7 @@ main button:not(.foe):not(.person):not(.emblem):disabled,#pairingDialog .p-contr
 .c6{background:#bad3b4;color:#385b38}
 
 @media(max-width:480px){.scores{gap:4px}.score{font-size:clamp(10px,2.9vw,13px);padding:0 1px;min-height:44px}}
+
+/* Reprise explicite des tournois, même charte et boutons que l'administration. */
+.existing-tournaments{margin:0 0 18px;padding:0 0 14px;border-bottom:1px solid var(--line)}.existing-tournaments h3,#admin>h3{font:600 19px/1.3 Georgia,serif;margin:8px 0 10px}.tournament-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}.tournament-item:last-child{border-bottom:0}.tournament-item strong,.tournament-item small{display:block;overflow-wrap:anywhere}.tournament-item button{flex:none}.tournament-item .grow{min-width:0}#currentTournamentTitle{font-size:22px;margin-bottom:16px}#teamAccessSummary{margin-top:16px}#managerOpen{width:100%}
+@media(max-width:480px){.tournament-item button{font-size:12px;padding:7px;min-height:40px}.tournament-item strong{font-size:13px}}
