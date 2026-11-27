@@ -1,18 +1,14 @@
-MISE À JOUR DEPUIS 0.4 : remplacer index.html et sw.js, ajouter app-v05.js. Garder app.js le temps que les anciens onglets soient fermés. Aucun SQL à exécuter. Fermer puis rouvrir les onglets, actualiser si nécessaire.
+T9A TEAM MATCHUP TOOL — v0.8 / version candidate
 
-T9A TEAM MATCHUP TOOL — v0.5 TEST
+1. Ne pas importer à nouveau le tournoi. Vérifier que les anciennes estimations en attente sont synchronisées, sauvegarder la base et noter le commit GitHub actuel.
+2. Supabase : exécuter une seule fois T9A_05_lien_commun_v08.sql dans SQL Editor (fichier fourni séparément). Ne pas exécuter l’ancienne migration 05_team_invitations. Les anciens liens non utilisés sont annulés ; les accès existants restent actifs.
+3. GitHub : extraire l’archive, envoyer index.html, app-v08.js, style-v08.css, sw.js, favicon.svg et le dossier emblems à la racine de main. Ne pas mettre le SQL sur le dépôt public. Laisser les anciens fichiers JS en place jusqu’à validation.
+4. Vérifier GitHub Actions / Pages, ouvrir l’URL habituelle, vérifier la version 0.8.
+5. Admin : sélectionner le tournoi et l’équipe, créer le lien personnel du capitaine. Dans une session navigateur séparée, ouvrir le lien, accepter, sélectionner le pseudonyme du capitaine et créer le lien commun.
+6. Ouvrir le lien commun dans deux sessions distinctes, sélectionner deux profils disponibles. Vérifier la saisie des cinq fourchettes, la matrice, l’absence d’accès aux estimations de l’autre équipe, les conflits et le mode hors connexion. Ne pas partager les liens avant ces vérifications.
 
-1. Décompresser le ZIP.
-2. Dans un dépôt GitHub dédié, téléverser index.html, app-v05.js et sw.js à la racine (pas le dossier ZIP).
-3. Settings > Pages > Source: Deploy from a branch > main > / (root) > Save.
-4. Ouvrir le lien HTTPS indiqué par GitHub Pages. Ne pas ouvrir index.html directement depuis le disque pour ce test.
-5. Se connecter avec le compte administrateur de l'application créé dans Authentication > Users (pas le mot de passe de la base).
-6. Créer un tournoi de test et importer list.txt. Choisir deux équipes, un round, enregistrer les scénarios, puis la rencontre.
-7. Créer un lien capitaine lié à un joueur, ou un lien joueur. Ouvrir dans un autre profil Chrome ou une fenêtre privée, pas dans la session administrateur. Ne pas réutiliser les liens consommés. Un capitaine peut inviter ses joueurs et créer les rencontres de son équipe ; un administrateur seul ne voit pas les estimations de l'équipe.
-8. Dans la session joueur, saisir une estimation et cliquer Enregistrer. Ouvrir la matrice. Tester avec une autre session de la même équipe puis une autre équipe. Les données doivent rester cloisonnées.
-9. Tester le mode hors ligne seulement après chargement en ligne et activation du service worker. Déconnecter le réseau, enregistrer une estimation, vérifier l'indication de mise en attente puis reconnecter. Les listes et la dernière matrice sont mises en cache localement. Un conflit de version exige confirmation lors d'une nouvelle saisie.
+Les liens expirent après 7 jours ; les sessions activées restent actives. Un profil déjà rattaché ne peut pas être pris par un second navigateur ; le capitaine peut révoquer un accès joueur. En cas de fuite, révoquer le lien commun et tout accès indésirable avant d’en générer un nouveau. Le lien commun est une preuve de possession, pas une authentification de l’identité. Vérifier CAPTCHA / quotas Supabase avant ouverture publique.
 
-IMPORTANT : prototype, ne pas distribuer à la communauté avant validation RLS, invitations et CAPTCHA. La clé publishable est publique, le fichier ne doit jamais contenir une clé secret ni un mot de passe. Le cache local contient les données de l'équipe et le jeton de session : ne pas utiliser de navigateur partagé. Déconnexion d'une session anonyme = nouvelle invitation nécessaire. Les saisies sont rafraîchies par interrogation HTTP toutes les 15 secondes sur l'onglet visible, hors édition active ; la publication Realtime SQL n'est pas encore utilisée par cette version. Les suppressions sont aussi récupérées à l'actualisation. Pas de garantie de fonctionnement multi-appareils avant essai réel. L'import n'est pas une transaction SQL unique ; un nettoyage est tenté si une étape échoue. En cas d'échec de nettoyage, vérifier le tournoi partiel dans Supabase.
+Les emblèmes proviennent des livres d’armée T9A fournis ; vérifier les droits de réutilisation publique avant publication. Aucun export de tournoi ni donnée de test dans les fichiers de production. Les anciennes notes hors fourchettes restent visibles telles quelles et ne sont pas converties automatiquement. Les nouvelles estimations sont des textes correspondant aux cinq fourchettes.
 
-
-SCÉNARIOS : Season Pack 2 v3.1.4.1 p.5. Six déploiements, six primaires, six secondaires. Pas de cartes de terrain. Un seul secondaire par défaut, bouton pour trois secondaires distincts. Les trois valeurs sont enregistrées dans la colonne texte existante, séparées par « | ». Les choix non enregistrés restent en mémoire durant les changements de round et les rafraîchissements automatiques ; ils ne sont pas conservés après fermeture. Les joueurs consultent les choix enregistrés en lecture seule. Pas de sélection individuelle de secondaire ni de calcul de score dans cette version.
+Tests effectués : syntaxe JavaScript et rendu / interactions principales sous Chromium avec API et stockage simulés. SQL non exécuté dans un vrai PostgreSQL ; synchronisation entre appareils, RLS effective, service worker et Safari iOS non vérifiés. Version candidate uniquement.

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8f6a3d"/><stop offset="1" stop-color="#5e4327"/></linearGradient></defs>
+<path d="M12 8h40v24c0 13-8.6 21.7-20 24-11.4-2.3-20-11-20-24V8z" fill="url(#g)" stroke="#3a2715" stroke-width="2.2"/>
+<path d="M32 16v32" stroke="#e9d8b4" stroke-width="2.2" opacity=".9"/>
+<path d="M20 23h24" stroke="#e9d8b4" stroke-width="2.2" opacity=".9"/>
+<text x="32" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="700" fill="#f5ead1">T9A</text>
+</svg>
