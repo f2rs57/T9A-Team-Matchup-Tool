@@ -59,3 +59,10 @@
 
 /* v0.9.14 — les cartes centrales modifiables suivent les mêmes règles que le pool. */
 .p-card.p-central-action:not(:disabled){cursor:pointer;}
+
+/* v0.9.16 — voile 5 % sur les cartes disponibles et sélectionnées, doré inchangé. */
+.p-board .p-card:not(.selected):not(.recommended){background:color-mix(in srgb,#ede9df 95%,var(--faction-tint,#ede9df) 5%);}
+.p-board .p-card.selected:not(.recommended){background:color-mix(in srgb,#e2d4b8 95%,var(--faction-tint,#e2d4b8) 5%);}
+
+/* Three strategy choices; portrait is decorative and has an offline fallback. */
+.p-strategies label{min-width:0;gap:6px;min-height:44px;justify-content:flex-start}.p-strategies label>span:not(.p-offensive-portrait){min-width:0;overflow-wrap:normal}.p-offensive-portrait{position:relative;display:inline-grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border:1px solid #b9a784;border-radius:50%;overflow:hidden;margin-left:auto;background:#ede2cb;color:#65543d;font-weight:700;font-size:10px}.p-offensive-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;visibility:hidden}.p-offensive-portrait.loaded img{visibility:visible}.p-strategy-description{margin:0;color:var(--muted);font-size:11px;line-height:1.35}.p-photo-credit{margin:4px 0 0;font-size:10px;color:var(--muted)}.p-photo-credit a{color:inherit;text-decoration:underline}@media(max-width:520px){.p-strategies{gap:4px}.p-strategies label{gap:3px;padding:5px 3px;flex-wrap:wrap;justify-content:center;text-align:center;min-height:62px}.p-strategies label>span:not(.p-offensive-portrait){flex:1 1 60px}.p-offensive-portrait{width:24px;height:24px;flex-basis:24px;margin:0}.p-strategy-description{font-size:10px}}

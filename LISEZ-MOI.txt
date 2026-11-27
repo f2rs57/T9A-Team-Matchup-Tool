@@ -1,3 +1,23 @@
+MISE À JOUR 0.9.20 — correction des trois stratégies
+Solution défensive (global, par défaut) : maximiser le total des milieux de fourchettes. Solution équilibrée (balanced) : total + 4 par 17-20 et + 2 par 14-16 ; bonus internes de préférence, non ajoutés aux scores affichés. Pas de plafond strict de perte collective. Solution offensive (high) : maximiser le nombre de 17-20, puis de 14-16, puis le total. Les trois modes restent en maximin à choix purs. Les anciens choix global/high conservent leur objectif ; defensive (v0.9.19 uniquement) revient à global. Historique local des décisions conservé. Aucun SQL supplémentaire.
+
+MISE À JOUR 0.9.19 — trois stratégies et libellés de pairing
+Bouton « Valider le pairing », confirmation et étape « Pairing » ; validations des défenseurs et attaquants conservées.
+Solution défensive : minimiser les 0-3, puis les 4-6, puis maximiser le total. Solution équilibrée : ancien mode global, par défaut. Solution offensive : ancien mode gros scores. Les sauvegardes locales global/high sont compatibles ; ajout de defensive. Les trois modes restent en maximin à choix purs. Aucun SQL supplémentaire.
+Portrait Jean-Paul Rouve : Georges Biard, Jean-Paul Rouve Cannes 2016.jpg, CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Jean-Paul_Rouve_Cannes_2016.jpg ; https://creativecommons.org/licenses/by-sa/3.0/ ; affichage cadré en médaillon. Chargé depuis Wikimedia en ligne, initiales JP si indisponible. Le téléchargement de la photo n’a pas été possible dans l’environnement de développement ; chargement réel à contrôler après déploiement. Aucun fichier additionnel à importer.
+
+MISE À JOUR 0.9.18 — choix du format d’équipe
+Liste déroulante 4, 5, 6, 8 (6 par défaut) à la création du tournoi. Contrôle du nombre de joueurs de chaque équipe avant toute écriture en base. Les tournois existants et le moteur restent inchangés ; aucun SQL supplémentaire.
+
+MISE À JOUR 0.9.17 — protocoles d’appariement confirmés
+Le moteur existant correspond déjà aux quatre protocoles confirmés. Textes de validation et documentation clarifiés ; URL du worker alignée sur le cache de la version. Aucun SQL supplémentaire.
+
+MISE À JOUR 0.9.16 — voile de faction réduit à 5 %
+Seule la teinte des cartes disponibles et sélectionnées change. Recommandations dorées et autres éléments inchangés. Aucun SQL supplémentaire.
+
+MISE À JOUR 0.9.15 — voile de faction et identité
+Voile de 10 % des couleurs Sheets sur les cartes disponibles et sélectionnées, cartes recommandées et double animation dorée inchangées. Emblème du joueur dans son identité sous le titre à gauche (administrateur inchangé). Légendes des fourchettes absentes des deux matrices ; autres indications conservées. Aucun SQL supplémentaire.
+
 MISE À JOUR 0.9.14 — cliquer sur un défenseur ou attaquant sélectionné au centre permet de le retirer avant validation de son étape. Les choix validés restent protégés ; bouton Retour pour revenir à une étape précédente. Aucun SQL.
 
 MISE À JOUR 0.9.13 — suppression des légendes de couleurs redondantes dans les deux matrices. Valeurs, couleurs, indication des cases manquantes et états des cartes conservés. Aucun SQL.
@@ -49,7 +69,7 @@ MISE A JOUR DEPUIS 0.8 DEJA DEPLOYEE
 
 MOTEUR : maximin déterministe à choix purs, anticipant les décisions adverses et les appariements restants. Les choix simultanés ne supposent pas que nous connaissons le choix adverse à l'avance. La matrice doit être complète pour les joueurs restants (aucune note manquante imputée dans le calcul). Fourchettes représentées par leurs médianes internes 2,6,10,14,18. Gros scores : priorité lexicographique au nombre de 16-20, puis de 12-16, puis au total médian. Il ne s'agit pas de probabilités de victoire, ni d'une garantie du résultat réel. L'adversaire est modélisé comme cherchant à minimiser notre objectif ; sa propre matrice n'est pas connue. Plafonds de score de tournoi et choix de tables non modélisés.
 
-PROTOCOLES : 4/6/8 joueurs, dernier cycle à quatre avec les deux appariements croisés (attaquant refusé vs non proposé adverse). 5 joueurs : deux cycles, dernier duel automatique. 5 et 8 selon Tournament Rules Pack T9A (2e édition, p.15-16) https://www.the-ninth-age.com/IMG/pdf/t9a-fb_2ed_tournament_rules_pack_1.1_en.pdf ; vérifier les règles exactes de l'événement, notamment pour 4 joueurs et ETC. Le retour des attaquants non retenus est validé pour le format 6, fin croisée retenue conformément à la discussion précédente. Palette des factions remplacée par les teintes de la capture Sheets en 0.9.4.
+PROTOCOLES : 4 joueurs = finale croisée ; 5 joueurs = ouverture puis finale où les deux attaquants refusés s’affrontent ; 6 joueurs = ouverture puis finale croisée ; 8 joueurs = deux ouvertures puis finale croisée (Rules Pack ETC/ESC 2026, p. 3–4). Formats 4, 5 et 6 selon le protocole confirmé par l’utilisateur. En finale croisée, chaque attaquant refusé affronte le joueur adverse non proposé. L’attribution des tables n’est pas gérée par l’application.
 
 TESTS : syntaxe JS ; moteur testé en Node sur les 4 formats, suivi de six joueurs complet en Chromium avec API, stockage et Worker simulés, noms des équipes, retour et réouverture. Environnement de test bloquant la navigation locale réelle : Worker navigateur, service worker, mode hors ligne réel, Safari iOS et Supabase de production non validés. Tester avec une session capitaine et des estimations avant usage en tournoi.
 

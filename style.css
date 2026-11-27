@@ -28,7 +28,7 @@ input[type=file]:disabled::file-selector-button{opacity:.55;box-shadow:none;curs
 .header-account .header-actions{justify-content:flex-end;gap:7px}
 #who{display:none!important}
 #admin>.grid{align-items:end}
-#admin>.grid>label input,.upload-control{height:44px;min-height:44px}
+#admin>.grid>label input,#admin>.grid>label select,.upload-control{height:44px;min-height:44px}
 .upload-field{display:flex;flex-direction:column;gap:6px;min-width:0}
 .upload-control{position:relative;display:flex;align-items:center;gap:8px;min-width:0;border:1px solid #ded2bc;border-radius:10px;background:#fffaf4;padding:4px 6px}
 .native-file{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:0!important;opacity:0;pointer-events:none;overflow:hidden}
@@ -78,3 +78,13 @@ main button:not(.foe):not(.person):not(.emblem):disabled,#pairingDialog .p-contr
 
 /* Résolution des conflits de synchronisation */
 #conflictDialog{width:500px;max-width:calc(100vw - 24px);padding:22px;border-radius:12px;box-shadow:0 12px 48px #39332b25}#conflictDialog h2{font-size:23px;margin:0}#conflictDialog h3{font:700 19px Georgia,serif;margin:12px 0 8px}#conflictMatch{margin:8px 0;overflow-wrap:anywhere}#conflictCount{font-size:11px} .conflict-values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:17px 0}.conflict-values>div{border:1px solid var(--line);border-radius:10px;padding:12px;background:#fffaf4;text-align:center}.conflict-values label{font-size:12px;min-height:32px;justify-content:center}.conflict-score{border-radius:7px;min-height:56px;display:grid;place-items:center;font-size:26px;font-weight:700;margin-top:8px;overflow-wrap:anywhere}.conflict-score.legacy{background:#eee5d3;font-size:18px}.conflict-actions{display:grid;gap:8px}.conflict-actions #conflictLater{background:transparent;box-shadow:none;border-color:transparent;font-size:12px}.conflict-actions button:disabled{background:#eeeae2;box-shadow:none}#conflictNotice:empty{display:none}#resolveConflicts{font-size:12px;color:#7a3935;border-color:#c9a8a0;background:#f4e8e0;min-height:36px}@media(max-width:480px){#conflictDialog{padding:16px}.conflict-values{gap:7px}.conflict-values>div{padding:8px}.conflict-values label{font-size:11px}}
+
+/* v0.9.15 — identité joueur sous le titre, emblème à gauche, actions à droite. */
+.header-profile .profile-text{display:flex;flex-direction:column;min-width:0;gap:0;}
+#headerTitle{min-width:0;}
+#headerTitle .header-profile.profile-with-emblem{display:flex;flex-direction:row;align-items:center;text-align:left;gap:7px;margin-top:8px;}
+#profileEmblem{display:flex;align-items:center;justify-content:center;flex:0 0 32px;width:32px;height:32px;}
+#profileEmblem img{width:100%;height:100%;object-fit:contain;opacity:.72;mix-blend-mode:multiply;}
+@media(max-width:480px){#profileEmblem{flex-basis:26px;width:26px;height:26px;}#headerTitle .header-profile.profile-with-emblem{gap:5px;margin-top:6px;}}
+
+@media(min-width:850px){#admin>.grid{grid-template-columns:minmax(0,1.3fr) minmax(0,.65fr) minmax(0,.85fr) minmax(0,1.35fr)}}

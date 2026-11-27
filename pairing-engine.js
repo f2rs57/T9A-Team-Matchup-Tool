@@ -4,7 +4,12 @@
 function solve(matrix,strategy,st){
  const n=matrix.length,full=(1<<n)-1;
  if(![4,5,6,8].includes(n)||matrix.some(r=>r.length!==n||r.some(v=>![1.5,5,8,10,12,15,18.5].includes(v))))throw Error('Matrice incomplète ou format non pris en charge.');
- const W=matrix.map(r=>r.map(v=>strategy==='high'?v+(v===18.5?10000:v===15?200:0):v));
+ if(!['global','balanced','high'].includes(strategy))throw Error('Stratégie inconnue.');
+ // Lexicographic objectives: 200 > maximum total-score difference (8 × 17),
+ // and 10000 > every possible secondary bonus plus total difference.
+ // Balanced utility: collective midpoint total + 4 per 17–20 + 2 per 14–16.
+ // This is a soft trade-off, not a hard cap on the loss of collective score.
+ const W=matrix.map(r=>r.map(v=>strategy==='high'?v+(v===18.5?10000:v===15?200:0):strategy==='balanced'?v+(v===18.5?4:v===15?2:0):v));
  const ids=Array.from({length:full+1},(_,m)=>Array.from({length:n},(_,i)=>i).filter(i=>m&(1<<i)));
  const pairs=ids.map(a=>a.flatMap((i,k)=>a.slice(k+1).map(j=>[i,j])));
  const memo=new Float64Array((full+1)**2);memo.fill(NaN);
