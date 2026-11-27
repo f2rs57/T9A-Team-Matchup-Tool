@@ -1,3 +1,6 @@
+MISE À JOUR 0.9.6 — gestion administrative des tournois
+Renommage du tournoi (propriétaire), suppression définitive (administrateur) après confirmation exacte du nom. Les règles RLS et les cascades SQL des migrations 01, 02 et 05 sont réutilisées. Aucun SQL supplémentaire. Ne pas supprimer un tournoi en cours si des joueurs ont des données locales non synchronisées. Les caches locaux des autres appareils ne peuvent pas être effacés à distance. Le numéro de match et l’archivage restent à développer.
+
 MISE À JOUR 0.9.5 — interface et favicon
 Titre Team Matchup Tool rétabli, identité du compte depuis les métadonnées Supabase ou le préfixe e-mail, ornements légers, commandes harmonisées, actions incomplètes désactivées. Favicon D + IX, variante choisie pour cette version. Aucun SQL ; le numéro de match reste à intégrer.
 
