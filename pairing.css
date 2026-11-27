@@ -78,3 +78,6 @@
 
 /* v0.9.22 — signature de la solution équilibrée. */
 .p-strategy-credit{display:block;font-size:.88em;font-weight:400;font-style:italic;line-height:1.2;margin-top:3px;color:var(--muted);}
+
+/* v0.9.27 — même voile de faction sur les cartes recommandées ; animations inchangées. */
+.p-board .p-card.recommended{background:color-mix(in srgb,#f8f2e4 95%,var(--faction-tint,#f8f2e4) 5%);}

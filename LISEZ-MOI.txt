@@ -1,3 +1,15 @@
+MISE À JOUR 0.9.29 — espace discret entre l’étoile dorée et le pseudo du capitaine, dans tous les affichages. Aucun SQL supplémentaire.
+
+MISE À JOUR 0.9.28 — tous les emblèmes de faction utilisent les fichiers transparents et des URL versionnées, y compris dans le cache hors ligne. Fonds des boutons, voile 5 %, animations et médaillons de stratégie conservés. Aucun SQL supplémentaire.
+
+MISE À JOUR 0.9.27 — voile de faction à 5 % également sur les cartes recommandées. Contour doré et cœur lumineux pulsant inchangés. Aucun SQL supplémentaire.
+
+MISE À JOUR 0.9.26 — 16 emblèmes de faction WebP avec canal alpha réel, sans carré blanc ; variante C du profil (emblème à droite, filet doré). Les trois illustrations de stratégie ne changent pas. Cache actualisé. Aucun SQL supplémentaire.
+
+MISE À JOUR 0.9.25 — signature « by Bref le Pépin, with love » en petit italique près du titre ; retour à la ligne sur écran étroit. Filigrane du profil et étoile du capitaine conservés. Aucun SQL supplémentaire après migration 07.
+
+MISE À JOUR 0.9.24 — emblème du profil connecté sous le pseudo, filigrane à 55 %, sans fond blanc ; étoile du capitaine conservée. Aucun SQL supplémentaire après migration 07.
+
 MISE A JOUR 0.9.23 - étoile du capitaine
 Exécuter T9A_07_capitaines_v0923.sql avant le déploiement. La RPC ne retourne que les identifiants équipe/joueur des capitaines des tournois accessibles. Etoile dans les profils, les listes, les matrices et les cartes. Identité avec emblème à droite du titre. Illustrations des trois stratégies conservées. Aucune modification des estimations.
 

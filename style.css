@@ -79,18 +79,30 @@ main button:not(.foe):not(.person):not(.emblem):disabled,#pairingDialog .p-contr
 /* Résolution des conflits de synchronisation */
 #conflictDialog{width:500px;max-width:calc(100vw - 24px);padding:22px;border-radius:12px;box-shadow:0 12px 48px #39332b25}#conflictDialog h2{font-size:23px;margin:0}#conflictDialog h3{font:700 19px Georgia,serif;margin:12px 0 8px}#conflictMatch{margin:8px 0;overflow-wrap:anywhere}#conflictCount{font-size:11px} .conflict-values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:17px 0}.conflict-values>div{border:1px solid var(--line);border-radius:10px;padding:12px;background:#fffaf4;text-align:center}.conflict-values label{font-size:12px;min-height:32px;justify-content:center}.conflict-score{border-radius:7px;min-height:56px;display:grid;place-items:center;font-size:26px;font-weight:700;margin-top:8px;overflow-wrap:anywhere}.conflict-score.legacy{background:#eee5d3;font-size:18px}.conflict-actions{display:grid;gap:8px}.conflict-actions #conflictLater{background:transparent;box-shadow:none;border-color:transparent;font-size:12px}.conflict-actions button:disabled{background:#eeeae2;box-shadow:none}#conflictNotice:empty{display:none}#resolveConflicts{font-size:12px;color:#7a3935;border-color:#c9a8a0;background:#f4e8e0;min-height:36px}@media(max-width:480px){#conflictDialog{padding:16px}.conflict-values{gap:7px}.conflict-values>div{padding:8px}.conflict-values label{font-size:11px}}
 
-/* v0.9.15 — identité joueur sous le titre, emblème à gauche, actions à droite. */
-.header-profile .profile-text{display:flex;flex-direction:column;min-width:0;gap:0;}
-#headerTitle{min-width:0;}
-#headerTitle .header-profile.profile-with-emblem{display:flex;flex-direction:row;align-items:center;text-align:left;gap:7px;margin-top:8px;}
-#profileEmblem{display:flex;align-items:center;justify-content:center;flex:0 0 32px;width:32px;height:32px;}
-#profileEmblem img{width:100%;height:100%;object-fit:contain;opacity:.72;mix-blend-mode:multiply;}
-@media(max-width:480px){#profileEmblem{flex-basis:26px;width:26px;height:26px;}#headerTitle .header-profile.profile-with-emblem{gap:5px;margin-top:6px;}}
-
 @media(min-width:850px){#admin>.grid{grid-template-columns:minmax(0,1.3fr) minmax(0,.65fr) minmax(0,.85fr) minmax(0,1.35fr)}}
 
 /* Capitaine : marqueur de rôle, non décoratif. */
-.captain-star{display:inline;color:#99702b;font-size:.88em;line-height:1;white-space:nowrap;vertical-align:baseline;}
-.header-account .header-profile.profile-with-emblem{display:flex;flex-direction:row;align-items:center;text-align:right;gap:7px;}
-.header-account .profile-text{text-align:right;}
-@media(max-width:480px){.header-account .header-profile.profile-with-emblem{gap:4px;}}
+.captain-star{display:inline-block;color:#99702b;font-size:.88em;line-height:1;white-space:nowrap;vertical-align:baseline;margin-inline-end:.4em;}
+/* v0.9.24 — emblème filigrané sous le pseudo, sur le parchemin. */
+#headerTitle{min-width:0}
+.header-account .header-profile.profile-with-emblem{display:grid;grid-template-columns:minmax(0,1fr);justify-items:end;align-items:center;text-align:right;gap:2px;max-width:100%}
+.header-account .profile-text{display:flex;flex-direction:column;min-width:0;text-align:right;gap:0}
+.header-account .profile-with-emblem .profile-text{display:contents}
+#profileName{grid-row:1}
+#profileEmblem{grid-row:2;display:grid;place-items:center;width:34px;height:34px;mix-blend-mode:multiply;opacity:.55;background:transparent;border:0;pointer-events:none;justify-self:end}
+#profileEmblem img{display:block;width:100%;height:100%;object-fit:contain;background:transparent}
+#profileRole{grid-row:3;max-width:100%;text-align:right}
+@media(max-width:480px){#profileEmblem{width:30px;height:30px}.header-account .header-profile.profile-with-emblem{gap:1px}}
+
+/* Signature d’auteur : adjacente au titre, retour à la ligne sur écran étroit. */
+.brand-title{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:9px;row-gap:2px}.brand-signature{font:italic 11px/1.3 Georgia,serif;color:#796b57;white-space:nowrap}#headerTitle{flex:1 1 0;min-width:0}.header-account{flex:0 1 auto;max-width:48%}.invite-mode .brand-title{justify-content:center}.invite-mode #headerTitle{text-align:center}.player-mode .brand-title h1{max-width:100%}@media(max-width:480px){.brand-signature{font-size:10px}.brand-title{column-gap:6px;row-gap:3px}}
+
+/* v0.9.26 — variante C, emblèmes réellement transparents. */
+#profileIdentity.profile-with-emblem{display:grid;grid-template-columns:minmax(0,1fr) 40px;column-gap:8px;align-items:center;justify-items:end}
+#profileIdentity.profile-with-emblem .profile-text{display:flex;grid-column:1;grid-row:1;align-items:flex-end}
+#profileEmblem{grid-column:2;grid-row:1;width:40px;height:40px;border-left:1px solid #d6c6a9;padding-left:7px;opacity:.60;justify-self:end;mix-blend-mode:normal}
+#profileRole{line-height:1.35}
+@media(max-width:480px){#profileIdentity.profile-with-emblem{grid-template-columns:minmax(0,1fr) 31px;column-gap:5px}#profileEmblem{width:31px;height:31px;padding-left:5px}}
+
+/* v0.9.28 — fond transparent pour chaque emblème de faction, dans tous les écrans. */
+img.faction-icon{background:transparent!important;border:0!important;box-shadow:none!important;mix-blend-mode:normal!important;}
