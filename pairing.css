@@ -89,3 +89,9 @@
 .p-strategy-crest{position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:20px;height:20px;display:grid;place-items:center;border:1px solid #bca27b;border-radius:50%;background:#faf7ef;color:#826b46;box-shadow:0 1px 2px #66503120}
 .p-strategy-crest svg{width:14px;height:14px}.p-strategy-copy{display:flex;flex-direction:column;gap:4px;min-width:0;text-align:left}.p-strategy-name{font:700 14px/1.2 Georgia,serif}.p-strategy-detail{font:400 11px/1.35 Arial,sans-serif;color:var(--muted)}.p-strategy-credit{margin-top:0;font-size:10px}
 @media(max-width:720px){.p-strategies label{min-height:145px;justify-content:flex-start;padding:7px 4px;gap:5px;flex-direction:column}.p-strategy-art{width:48px;height:48px;flex-basis:48px}.p-strategy-art .p-strategy-emblem{width:48px;height:48px}.p-strategy-crest{width:17px;height:17px}.p-strategy-crest svg{width:12px;height:12px}.p-strategy-copy{text-align:center;gap:3px}.p-strategy-name{font-size:11px}.p-strategy-detail{font-size:10px;line-height:1.25}.p-strategy-credit{font-size:9px}}
+
+/* 0.10.0 Beta — appariement directement dans l’onglet, non modal. */
+#pairingDialog:not([hidden]){display:flex;flex-direction:column;gap:12px;width:100%;max-width:none;min-width:0;max-height:none;height:auto;overflow:visible;padding:0 0 16px;margin:0 0 12px;border-radius:0;overscroll-behavior:auto}
+#pairingDialog .p-head h2{font-size:24px}#pairingDialog .p-board{min-width:0}#pairingDialog .p-strategies{margin-bottom:2px}
+#pairingDialog .p-strategy-art{width:70px;height:70px;flex-basis:70px}#pairingDialog .p-strategy-art .p-strategy-emblem{width:70px;height:70px}
+@media(max-width:720px){#pairingDialog .p-strategy-art{width:50px;height:50px;flex-basis:50px}#pairingDialog .p-strategy-art .p-strategy-emblem{width:50px;height:50px}}
