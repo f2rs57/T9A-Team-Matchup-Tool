@@ -1,4 +1,4 @@
-const CACHE='t9a-shell-04-v1',FILES=['./index.html','./app.js'];
+const CACHE='t9a-shell-05-v1',FILES=['./index.html','./app-v05.js'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('t9a-shell-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
-self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin)return;const u=new URL(e.request.url);if(e.request.mode==='navigate'){e.respondWith(fetch(e.request).catch(()=>caches.match('./index.html')));return}if(u.pathname===new URL('./app.js',self.location.href).pathname)e.respondWith(caches.match('./app.js').then(r=>r||fetch(e.request)))});
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin)return;const u=new URL(e.request.url);if(e.request.mode==='navigate'){e.respondWith(fetch(e.request).catch(()=>caches.match('./index.html')));return}if(u.pathname===new URL('./app-v05.js',self.location.href).pathname)e.respondWith(caches.match('./app-v05.js').then(r=>r||fetch(e.request)))});

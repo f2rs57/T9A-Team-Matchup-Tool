@@ -1,7 +1,9 @@
-T9A TEAM MATCHUP TOOL — v0.4 TEST
+MISE À JOUR DEPUIS 0.4 : remplacer index.html et sw.js, ajouter app-v05.js. Garder app.js le temps que les anciens onglets soient fermés. Aucun SQL à exécuter. Fermer puis rouvrir les onglets, actualiser si nécessaire.
+
+T9A TEAM MATCHUP TOOL — v0.5 TEST
 
 1. Décompresser le ZIP.
-2. Dans un dépôt GitHub dédié, téléverser index.html, app.js et sw.js à la racine (pas le dossier ZIP).
+2. Dans un dépôt GitHub dédié, téléverser index.html, app-v05.js et sw.js à la racine (pas le dossier ZIP).
 3. Settings > Pages > Source: Deploy from a branch > main > / (root) > Save.
 4. Ouvrir le lien HTTPS indiqué par GitHub Pages. Ne pas ouvrir index.html directement depuis le disque pour ce test.
 5. Se connecter avec le compte administrateur de l'application créé dans Authentication > Users (pas le mot de passe de la base).
@@ -11,3 +13,6 @@ T9A TEAM MATCHUP TOOL — v0.4 TEST
 9. Tester le mode hors ligne seulement après chargement en ligne et activation du service worker. Déconnecter le réseau, enregistrer une estimation, vérifier l'indication de mise en attente puis reconnecter. Les listes et la dernière matrice sont mises en cache localement. Un conflit de version exige confirmation lors d'une nouvelle saisie.
 
 IMPORTANT : prototype, ne pas distribuer à la communauté avant validation RLS, invitations et CAPTCHA. La clé publishable est publique, le fichier ne doit jamais contenir une clé secret ni un mot de passe. Le cache local contient les données de l'équipe et le jeton de session : ne pas utiliser de navigateur partagé. Déconnexion d'une session anonyme = nouvelle invitation nécessaire. Les saisies sont rafraîchies par interrogation HTTP toutes les 15 secondes sur l'onglet visible, hors édition active ; la publication Realtime SQL n'est pas encore utilisée par cette version. Les suppressions sont aussi récupérées à l'actualisation. Pas de garantie de fonctionnement multi-appareils avant essai réel. L'import n'est pas une transaction SQL unique ; un nettoyage est tenté si une étape échoue. En cas d'échec de nettoyage, vérifier le tournoi partiel dans Supabase.
+
+
+SCÉNARIOS : Season Pack 2 v3.1.4.1 p.5. Six déploiements, six primaires, six secondaires. Pas de cartes de terrain. Un seul secondaire par défaut, bouton pour trois secondaires distincts. Les trois valeurs sont enregistrées dans la colonne texte existante, séparées par « | ». Les choix non enregistrés restent en mémoire durant les changements de round et les rafraîchissements automatiques ; ils ne sont pas conservés après fermeture. Les joueurs consultent les choix enregistrés en lecture seule. Pas de sélection individuelle de secondaire ni de calcul de score dans cette version.
