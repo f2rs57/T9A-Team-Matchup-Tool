@@ -1,3 +1,8 @@
+MISE À JOUR 0.9.2 : interface française, bouton TXT personnalisé aligné, identité du profil en haut à droite. Les traductions de factions/scénarios sont des libellés de présentation, pas une traduction officielle vérifiée. Les noms propres, listes NewRecruit et données stockées restent inchangés. Aucun SQL ; le numéro de match reste à développer.
+
+MISE A JOUR GRAPHIQUE 0.9.1 (depuis 0.9)
+Bandeau The Ninth Age fourni par l'utilisateur, variante C en pied de page des écrans principaux ; non affiché dans les fenêtres de décision pour préserver l'espace utile. Statut hors ligne/non connecté supprimé ; alertes de synchronisation conservées. Bouton de sélection TXT harmonisé. Cache mis à jour. Aucun SQL ; le numéro de match n'est pas inclus. Déposer tous les fichiers de cette archive à la racine du dépôt main, conserver les anciens fichiers JS/CSS. Vérifier le droit de réutilisation publique du bandeau.
+
 T9A TEAM MATCHUP TOOL — v0.9 / version candidate
 
 MISE A JOUR DEPUIS 0.8 DEJA DEPLOYEE
