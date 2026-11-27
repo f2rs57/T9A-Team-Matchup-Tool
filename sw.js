@@ -1,4 +1,4 @@
-const VERSION='0.9.6', CACHE='t9a-shell-096-v1';
+const VERSION='0.9.7', CACHE='t9a-shell-097-v1';
 const VERSIONED=['style.css','app.js','pairing.css','pairing.js','pairing-engine.js','favicon.svg','apple-touch-icon.png'].map(f=>'./'+f+'?v='+VERSION);
 const FILES=['./index.html',...VERSIONED,'./favicon.ico','./t9a-banner.png',...['BH','DL','DE','DH','EOS','HE','ID','KOE','OK','ONG','SA','SE','UD','VC','VS','WDG'].map(x=>'./emblems/'+x+'.webp')];
 const URLS=new Set(FILES.map(f=>new URL(f,self.location.href).href));
