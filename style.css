@@ -88,3 +88,9 @@ main button:not(.foe):not(.person):not(.emblem):disabled,#pairingDialog .p-contr
 @media(max-width:480px){#profileEmblem{flex-basis:26px;width:26px;height:26px;}#headerTitle .header-profile.profile-with-emblem{gap:5px;margin-top:6px;}}
 
 @media(min-width:850px){#admin>.grid{grid-template-columns:minmax(0,1.3fr) minmax(0,.65fr) minmax(0,.85fr) minmax(0,1.35fr)}}
+
+/* Capitaine : marqueur de rôle, non décoratif. */
+.captain-star{display:inline;color:#99702b;font-size:.88em;line-height:1;white-space:nowrap;vertical-align:baseline;}
+.header-account .header-profile.profile-with-emblem{display:flex;flex-direction:row;align-items:center;text-align:right;gap:7px;}
+.header-account .profile-text{text-align:right;}
+@media(max-width:480px){.header-account .header-profile.profile-with-emblem{gap:4px;}}

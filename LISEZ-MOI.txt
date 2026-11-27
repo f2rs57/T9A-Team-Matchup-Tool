@@ -1,3 +1,10 @@
+MISE A JOUR 0.9.23 - étoile du capitaine
+Exécuter T9A_07_capitaines_v0923.sql avant le déploiement. La RPC ne retourne que les identifiants équipe/joueur des capitaines des tournois accessibles. Etoile dans les profils, les listes, les matrices et les cartes. Identité avec emblème à droite du titre. Illustrations des trois stratégies conservées. Aucune modification des estimations.
+
+MISE À JOUR 0.9.22 — ajout de la mention (Gregus approved) en italique sous Solution équilibrée. Aucun changement de stratégie ni SQL.
+
+MISE À JOUR 0.9.21 — trois médaillons illustrés locaux. Repos : opacité 40 %, désaturation ; survol et sélection : pleine couleur. Les trois images dans emblems/ sont incluses dans le cache hors ligne. Portrait externe supprimé au profit de l’illustration fournie. Stratégies de calcul inchangées. Aucun SQL.
+
 MISE À JOUR 0.9.20 — correction des trois stratégies
 Solution défensive (global, par défaut) : maximiser le total des milieux de fourchettes. Solution équilibrée (balanced) : total + 4 par 17-20 et + 2 par 14-16 ; bonus internes de préférence, non ajoutés aux scores affichés. Pas de plafond strict de perte collective. Solution offensive (high) : maximiser le nombre de 17-20, puis de 14-16, puis le total. Les trois modes restent en maximin à choix purs. Les anciens choix global/high conservent leur objectif ; defensive (v0.9.19 uniquement) revient à global. Historique local des décisions conservé. Aucun SQL supplémentaire.
 

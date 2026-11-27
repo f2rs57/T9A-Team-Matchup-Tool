@@ -64,5 +64,17 @@
 .p-board .p-card:not(.selected):not(.recommended){background:color-mix(in srgb,#ede9df 95%,var(--faction-tint,#ede9df) 5%);}
 .p-board .p-card.selected:not(.recommended){background:color-mix(in srgb,#e2d4b8 95%,var(--faction-tint,#e2d4b8) 5%);}
 
-/* Three strategy choices; portrait is decorative and has an offline fallback. */
-.p-strategies label{min-width:0;gap:6px;min-height:44px;justify-content:flex-start}.p-strategies label>span:not(.p-offensive-portrait){min-width:0;overflow-wrap:normal}.p-offensive-portrait{position:relative;display:inline-grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border:1px solid #b9a784;border-radius:50%;overflow:hidden;margin-left:auto;background:#ede2cb;color:#65543d;font-weight:700;font-size:10px}.p-offensive-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;visibility:hidden}.p-offensive-portrait.loaded img{visibility:visible}.p-strategy-description{margin:0;color:var(--muted);font-size:11px;line-height:1.35}.p-photo-credit{margin:4px 0 0;font-size:10px;color:var(--muted)}.p-photo-credit a{color:inherit;text-decoration:underline}@media(max-width:520px){.p-strategies{gap:4px}.p-strategies label{gap:3px;padding:5px 3px;flex-wrap:wrap;justify-content:center;text-align:center;min-height:62px}.p-strategies label>span:not(.p-offensive-portrait){flex:1 1 60px}.p-offensive-portrait{width:24px;height:24px;flex-basis:24px;margin:0}.p-strategy-description{font-size:10px}}
+/* v0.9.21 — médaillons locaux, filigranés au repos, pleine couleur au survol et à la sélection. */
+.p-strategies{gap:8px;align-items:stretch}
+.p-strategies label{min-width:0;gap:8px;min-height:76px;padding:7px 10px;justify-content:center;transition:background .18s,border-color .18s,box-shadow .18s}
+.p-strategies .p-strategy-name{min-width:0;font-weight:600;line-height:1.2}
+.p-strategy-emblem{display:block;flex:0 0 64px;width:64px;height:64px;border-radius:50%;object-fit:contain;opacity:.40;filter:grayscale(.8) sepia(.18);transition:opacity .2s,filter .2s;pointer-events:none}
+.p-strategies label:has(input:checked) .p-strategy-emblem,.p-strategies label:focus-within .p-strategy-emblem{opacity:1;filter:none}
+@media(hover:hover){.p-strategies label:hover .p-strategy-emblem{opacity:1;filter:none}.p-strategies label:hover{border-color:#b9a784;background:#f3e9d8}}
+.p-strategies label:has(input:checked){background:#e8dcc5;border-color:#b9a784;box-shadow:0 2px 0 #cbb99b}
+.p-strategy-description{margin:0;color:var(--muted);font-size:11px;line-height:1.35}
+@media(max-width:720px){.p-strategies{gap:5px}.p-strategies label{position:relative;flex-direction:column;justify-content:center;gap:4px;padding:6px 3px;text-align:center;min-height:98px}.p-strategies input{position:absolute;top:6px;left:5px;margin:0}.p-strategy-emblem{width:50px;height:50px;flex-basis:50px}.p-strategies .p-strategy-name{font-size:11px}.p-strategy-description{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.p-strategies label,.p-strategy-emblem{transition:none}}
+
+/* v0.9.22 — signature de la solution équilibrée. */
+.p-strategy-credit{display:block;font-size:.88em;font-weight:400;font-style:italic;line-height:1.2;margin-top:3px;color:var(--muted);}
