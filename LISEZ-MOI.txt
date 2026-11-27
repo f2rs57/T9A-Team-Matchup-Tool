@@ -1,0 +1,27 @@
+MISE À JOUR 0.9.4 — palette de factions Sheets
+Les 16 couleurs sont échantillonnées dans la capture fournie. Cartes sélectionnées : fond couleur de faction, emblème et texte contrastés. Cartes disponibles et recommandations inchangées. Aucun SQL ; noms permanents conservés. Le numéro de match reste à intégrer.
+
+MISE À JOUR 0.9.3 — noms permanents et favicon D
+Déposer le contenu de cette archive à la racine de main, avec emblems/. Les fichiers app.js, style.css, pairing.js, pairing.css, pairing-engine.js, index.html et sw.js garderont ces noms pour les prochaines versions. Les versions restent dans les paramètres URL et le nom du cache, pas dans les noms de fichiers.
+Après un déploiement réussi et le contrôle de la v0.9.3, supprimer UNE DERNIÈRE FOIS app-v092.js, style-v092.css, pairing-v092.js (et pairing-v09.css s’il existe encore). Aucun besoin de supprimer les autres fichiers. Favicon D et icône Apple intégrés. Aucun SQL supplémentaire. Ne pas effacer les données du navigateur si des estimations sont en attente ou un pairing est en cours.
+
+MISE À JOUR 0.9.2 : interface française, bouton TXT personnalisé aligné, identité du profil en haut à droite. Les traductions de factions/scénarios sont des libellés de présentation, pas une traduction officielle vérifiée. Les noms propres, listes NewRecruit et données stockées restent inchangés. Aucun SQL ; le numéro de match reste à développer.
+
+MISE A JOUR GRAPHIQUE 0.9.1 (depuis 0.9)
+Bandeau The Ninth Age fourni par l'utilisateur, variante C en pied de page des écrans principaux ; non affiché dans les fenêtres de décision pour préserver l'espace utile. Statut hors ligne/non connecté supprimé ; alertes de synchronisation conservées. Bouton de sélection TXT harmonisé. Cache mis à jour. Aucun SQL ; le numéro de match n'est pas inclus. Déposer tous les fichiers de cette archive à la racine du dépôt main, les anciens fichiers JS/CSS versionnés ne sont plus nécessaires après déploiement. Vérifier le droit de réutilisation publique du bandeau.
+
+T9A TEAM MATCHUP TOOL — v0.9 / version candidate
+
+MISE A JOUR DEPUIS 0.8 DEJA DEPLOYEE
+1. Aucun SQL supplémentaire pour cette version. Ne pas réimporter le tournoi ni réexécuter les migrations SQL 01 à 05. Conserver le commit GitHub v0.8 comme sauvegarde.
+2. Extraire le ZIP et déposer son contenu à la racine de main (incluant le dossier emblems). Voir les consignes 0.9.3 ci-dessus. Vérifier la dernière exécution de GitHub Actions / Pages, puis actualiser le site. Le numéro de version en cours doit apparaître.
+3. Connecté comme capitaine, enregistrer/sélectionner la rencontre et ouvrir « Assistant pairing ». L'onglet utilise les estimations collectives de la rencontre. Les joueurs gardent leurs accès d'estimation et de matrice habituels. Le suivi du pairing reste local à l'appareil du capitaine, non partagé entre appareils.
+4. Choisir la stratégie ; sélectionner et valider les 2 défenseurs, les 4 attaquants, puis les 2 attaquants retenus (y compris celui retenu par l'adversaire). Confirmer la liste des rencontres. Retour annule la dernière validation, y compris les appariements ajoutés. Les cartes restantes reviennent au pool.
+
+MOTEUR : maximin déterministe à choix purs, anticipant les décisions adverses et les appariements restants. Les choix simultanés ne supposent pas que nous connaissons le choix adverse à l'avance. La matrice doit être complète pour les joueurs restants (aucune note manquante imputée dans le calcul). Fourchettes représentées par leurs médianes internes 2,6,10,14,18. Gros scores : priorité lexicographique au nombre de 16-20, puis de 12-16, puis au total médian. Il ne s'agit pas de probabilités de victoire, ni d'une garantie du résultat réel. L'adversaire est modélisé comme cherchant à minimiser notre objectif ; sa propre matrice n'est pas connue. Plafonds de score de tournoi et choix de tables non modélisés.
+
+PROTOCOLES : 4/6/8 joueurs, dernier cycle à quatre avec les deux appariements croisés (attaquant refusé vs non proposé adverse). 5 joueurs : deux cycles, dernier duel automatique. 5 et 8 selon Tournament Rules Pack T9A (2e édition, p.15-16) https://www.the-ninth-age.com/IMG/pdf/t9a-fb_2ed_tournament_rules_pack_1.1_en.pdf ; vérifier les règles exactes de l'événement, notamment pour 4 joueurs et ETC. Le retour des attaquants non retenus est validé pour le format 6, fin croisée retenue conformément à la discussion précédente. Palette des factions remplacée par les teintes de la capture Sheets en 0.9.4.
+
+TESTS : syntaxe JS ; moteur testé en Node sur les 4 formats, suivi de six joueurs complet en Chromium avec API, stockage et Worker simulés, noms des équipes, retour et réouverture. Environnement de test bloquant la navigation locale réelle : Worker navigateur, service worker, mode hors ligne réel, Safari iOS et Supabase de production non validés. Tester avec une session capitaine et des estimations avant usage en tournoi.
+
+Les emblèmes proviennent des livres d'armée T9A fournis ; vérifier les droits de réutilisation publique. Les règles d'accès et les invitations existantes ne changent pas. Ne pas déposer de données de test ou scripts SQL dans le dépôt public.
