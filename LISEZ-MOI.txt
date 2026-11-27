@@ -1,0 +1,13 @@
+T9A TEAM MATCHUP TOOL — v0.4 TEST
+
+1. Décompresser le ZIP.
+2. Dans un dépôt GitHub dédié, téléverser index.html, app.js et sw.js à la racine (pas le dossier ZIP).
+3. Settings > Pages > Source: Deploy from a branch > main > / (root) > Save.
+4. Ouvrir le lien HTTPS indiqué par GitHub Pages. Ne pas ouvrir index.html directement depuis le disque pour ce test.
+5. Se connecter avec le compte administrateur de l'application créé dans Authentication > Users (pas le mot de passe de la base).
+6. Créer un tournoi de test et importer list.txt. Choisir deux équipes, un round, enregistrer les scénarios, puis la rencontre.
+7. Créer un lien capitaine lié à un joueur, ou un lien joueur. Ouvrir dans un autre profil Chrome ou une fenêtre privée, pas dans la session administrateur. Ne pas réutiliser les liens consommés. Un capitaine peut inviter ses joueurs et créer les rencontres de son équipe ; un administrateur seul ne voit pas les estimations de l'équipe.
+8. Dans la session joueur, saisir une estimation et cliquer Enregistrer. Ouvrir la matrice. Tester avec une autre session de la même équipe puis une autre équipe. Les données doivent rester cloisonnées.
+9. Tester le mode hors ligne seulement après chargement en ligne et activation du service worker. Déconnecter le réseau, enregistrer une estimation, vérifier l'indication de mise en attente puis reconnecter. Les listes et la dernière matrice sont mises en cache localement. Un conflit de version exige confirmation lors d'une nouvelle saisie.
+
+IMPORTANT : prototype, ne pas distribuer à la communauté avant validation RLS, invitations et CAPTCHA. La clé publishable est publique, le fichier ne doit jamais contenir une clé secret ni un mot de passe. Le cache local contient les données de l'équipe et le jeton de session : ne pas utiliser de navigateur partagé. Déconnexion d'une session anonyme = nouvelle invitation nécessaire. Les saisies sont rafraîchies par interrogation HTTP toutes les 15 secondes sur l'onglet visible, hors édition active ; la publication Realtime SQL n'est pas encore utilisée par cette version. Les suppressions sont aussi récupérées à l'actualisation. Pas de garantie de fonctionnement multi-appareils avant essai réel. L'import n'est pas une transaction SQL unique ; un nettoyage est tenté si une étape échoue. En cas d'échec de nettoyage, vérifier le tournoi partiel dans Supabase.
