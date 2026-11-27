@@ -37,3 +37,23 @@ input[type=file]:disabled::file-selector-button{opacity:.55;box-shadow:none;curs
 .upload-control .file-button:active{background:#d9c9ad;box-shadow:none;transform:translateY(2px)}
 #fileNames{min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;color:var(--muted)}
 @media(max-width:480px){header,.player-mode header{justify-content:space-between;text-align:left;align-items:flex-start;gap:8px}header>div:first-child{flex:1;min-width:0}.header-account{max-width:52%;margin-left:auto}.header-profile{font-size:12px}.header-account .header-actions{justify-content:flex-end}.invite-mode header{text-align:center;justify-content:center}.invite-mode .header-account{display:none}.upload-control .file-button{font-size:13px}}
+
+/* 0.9.5 — composition unifiée, ornements et actions disponibles */
+main{position:relative;padding:26px 28px 30px;max-width:1040px;margin:12px auto;isolation:isolate}
+main::before,main::after{content:"";position:absolute;top:3px;width:62px;height:62px;pointer-events:none;z-index:-1;opacity:.62;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2078%2078%22%20fill%3D%22none%22%20stroke%3D%22%23b69b6b%22%20stroke-width%3D%221.3%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M2%2075V18Q2%202%2018%202H75M7%2062V22Q7%207%2022%207H62M3%2032C24%2031%2030%2020%2024%2013C18%206%208%2013%2013%2021C18%2028%2027%2015%2038%2011M32%203C31%2024%2020%2030%2013%2024C6%2018%2013%208%2021%2013C28%2018%2015%2027%2011%2038M8%2045Q20%2036%2014%2029M45%208Q36%2020%2029%2014%22%2F%3E%3Cpath%20d%3D%22M40%204l3%203-3%203-3-3zM4%2040l3%203%203-3-3-3z%22%20fill%3D%22%23b69b6b%22%2F%3E%3C%2Fsvg%3E") no-repeat center/contain}
+main::before{left:3px}main::after{right:3px;transform:scaleX(-1)}
+header{min-height:70px;padding:8px 0 15px;align-items:center;margin-bottom:12px;gap:12px}
+header h1{font:700 19px/1.2 Georgia,serif;letter-spacing:.15px;color:#3f3529}header small{display:block;margin-top:3px}
+.header-account{gap:4px}.header-profile{gap:0}.header-profile small{margin-top:0}
+#admin,#contextSection,#invites{padding:15px 0 17px;margin-bottom:12px}
+#admin h2{margin-bottom:15px}#admin>.grid{gap:12px}#admin>.row{align-items:center}
+#contextSection .scenario-panel{margin-top:16px}
+#loginForm{align-items:end}#loginForm input,#loginSubmit{height:44px}
+/* Une couleur commune pour les commandes, sauf cartes, estimations et emblèmes. */
+main button:not(.foe):not(.person):not(.emblem),#pairingDialog .p-controls button{background:#e8ddc7;border-color:#cdbb9e;border-bottom-color:#bca98b;box-shadow:0 2px 0 #d5c7b0,0 3px 6px #66503113;color:#39332b}
+main button:not(.foe):not(.person):not(.emblem):hover:not(:disabled),#pairingDialog .p-controls button:hover:not(:disabled){background:#e0d1b6}
+main button:not(.foe):not(.person):not(.emblem):active:not(:disabled),#pairingDialog .p-controls button:active:not(:disabled){background:#d6c5a7;box-shadow:none;transform:translateY(2px)}
+main button:not(.foe):not(.person):not(.emblem):disabled,#pairingDialog .p-controls button:disabled{background:#efede7;border-color:#dfdcd4;color:#938f86;box-shadow:none;opacity:1;cursor:default;transform:none;filter:none}
+.upload-control .file-button{height:32px;min-height:32px}
+.site-brand{position:relative;margin:12px auto 0;padding:13px 0 4px}.site-brand::before{content:"◇";position:absolute;top:-10px;left:50%;transform:translateX(-50%);color:#ad946b;background:var(--bg);padding:0 10px;font:16px Georgia,serif;line-height:20px}
+@media(max-width:480px){main{margin:4px auto;padding:18px 15px 24px}main::before,main::after{width:34px;height:34px;opacity:.5}header{padding-top:8px;min-height:0}header h1{font-size:16px}header .header-account{max-width:48%}.header-account .header-actions button{min-height:30px;font-size:11px;padding:4px 7px}.header-account .header-actions{gap:5px}.site-brand img{max-width:100%}.upload-control .file-button{font-size:12px}#admin>.grid{gap:10px}}

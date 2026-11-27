@@ -1,3 +1,6 @@
+MISE À JOUR 0.9.5 — interface et favicon
+Titre Team Matchup Tool rétabli, identité du compte depuis les métadonnées Supabase ou le préfixe e-mail, ornements légers, commandes harmonisées, actions incomplètes désactivées. Favicon D + IX, variante choisie pour cette version. Aucun SQL ; le numéro de match reste à intégrer.
+
 MISE À JOUR 0.9.4 — palette de factions Sheets
 Les 16 couleurs sont échantillonnées dans la capture fournie. Cartes sélectionnées : fond couleur de faction, emblème et texte contrastés. Cartes disponibles et recommandations inchangées. Aucun SQL ; noms permanents conservés. Le numéro de match reste à intégrer.
 
