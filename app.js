@@ -5,8 +5,8 @@ const $=id=>document.getElementById(id), uid=()=>crypto.randomUUID();
 const factions=['Beast Herds','Daemon Legions','Dread Elves','Dwarven Holds','Empire of Sonnstahl','Highborn Elves','Infernal Dwarves','Kingdom of Equitaine','Ogre Khans','Orcs and Goblins','Saurian Ancients','Sylvan Elves','Undying Dynasties','Vampire Covenant','Vermin Swarm','Warriors of the Dark Gods'];
 const scenarios={deploy:['Frontline Clash','Bottleneck','Spearhead','Encircle','Refused Flank','Assault at First Light'],primary:['Trophies of War','Divide and Conquer','Breakthrough','Secure Targets','Hold the Centre','Skull of Harald Redstub'],secondary:['Settle the Score','Demonstrate Superiority','Slay the Beast','Assassinate','Capture their Banners','Conserve our Numbers']};
 // Libellés français : les identifiants anglais NewRecruit/Supabase restent inchangés.
-const factionFR=Object.fromEntries(factions.map((f,i)=>[f,['Hordes bestiales','Légions démoniaques','Elfes noirs','Forteresses naines','Empire de Sonnstahl','Hauts elfes','Nains infernaux','Royaume d’Équitaine','Khans ogres','Orques et gobelins','Anciens sauriens','Elfes sylvains','Dynasties immortelles','Conclave vampirique','Nuées de vermines','Guerriers des dieux sombres'][i]]));
-const factionLabel=f=>factionFR[f]||f||'—', scenarioLabel=s=>s, roleLabel=r=>({captain:'Capitaine',player:'Joueur',admin:'Administrateur'}[r]||'Profil');
+const factionFR=Object.fromEntries(factions.map((f,i)=>[f.toLowerCase(),["Hordes Bestiales", "Légions Démoniaques", "Elfes Noirs", "Forteresses Naines", "Empire de Sonnstahl", "Hauts Elfes", "Nains Infernaux", "Royaume d’Équitaine", "Khans Ogres", "Orques et Gobelins", "Anciens Sauriens", "Elfes Sylvains", "Dynasties Immortelles", "Conclave Vampirique", "Nuées de Vermines", "Guerriers des Dieux Sombres"][i]]));
+const factionLabel=f=>factionFR[String(f||'').trim().toLowerCase()]||f||'—', scenarioLabel=s=>s, roleLabel=r=>({captain:'Capitaine',player:'Joueur',admin:'Administrateur'}[r]||'Profil');
 const prefix='t9a-cloud-04:',sessionKey=prefix+'session'; // keep existing sessions and offline estimates
 const roundDrafts=new Map();
 const roundKey=()=>context.t+':'+context.r;
@@ -54,7 +54,7 @@ const labels=['0-3','4-6','7-9','10','11-13','14-16','17-20'];
 const estimateBounds=[[0,3],[4,6],[7,9],[10,10],[11,13],[14,16],[17,20]];
 const estimateMidpoints=estimateBounds.map(([lo,hi])=>(lo+hi)/2);
 const factionCodes=Object.fromEntries(factions.map((f,i)=>[f,['BH','DL','DE','DH','EOS','HE','ID','KOE','OK','ONG','SA','SE','UD','VC','VS','WDG'][i]]));
-function iconFor(p){const code=factionCodes[p.faction];if(!code)return el('span','?');const img=el('img',null,'faction-icon');img.src='./emblems/'+code+'.webp?v=0.9.29';img.alt='';return img}
+function iconFor(p){const code=factionCodes[p.faction];if(!code)return el('span','?');const img=el('img',null,'faction-icon');img.src='./emblems/'+code+'.webp?v=0.9.32';img.alt='';return img}
 function emblem(p){const e=el('span',null,'emblem');e.append(iconFor(p));return e}
 function color(v){const i=labels.indexOf(v);return i<0?'':'c'+i}
 function person(p){const b=el('button',null,'person');b.type='button';b.append(iconFor(p),playerNameNode(p),el('small',factionLabel(p.faction)));b.title=p.name+' · '+factionLabel(p.faction);b.onclick=()=>{$('listTitle').textContent=p.name+' · '+factionLabel(p.faction)+' · '+(p.army_points??'—')+' pts';$('listText').textContent=p.army_list;$('listDialog').showModal()};return b}

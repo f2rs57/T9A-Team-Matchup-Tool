@@ -106,3 +106,18 @@ main button:not(.foe):not(.person):not(.emblem):disabled,#pairingDialog .p-contr
 
 /* v0.9.28 — fond transparent pour chaque emblème de faction, dans tous les écrans. */
 img.faction-icon{background:transparent!important;border:0!important;box-shadow:none!important;mix-blend-mode:normal!important;}
+
+/* v0.9.32 — alignements d'en-tête et matrice, sans modifier les cellules. */
+main>header{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:20px;padding:13px 0 15px;margin-bottom:12px;min-height:76px;text-align:left}
+#headerTitle{flex:1 1 0;min-width:0} .brand-title{align-items:baseline;gap:3px 9px} .brand-title h1{font-size:clamp(17px,2.1vw,22px);line-height:1.2} .brand-signature{font-size:11px}
+main>header .header-account{flex:0 1 auto;max-width:51%;display:flex;flex-direction:row;align-items:center;justify-content:flex-end;gap:12px;text-align:right}
+main>header .header-profile:not([hidden]){border-left:1px solid #d6c6a9;padding-left:12px;min-width:0;max-width:100%;margin:0}
+main>header .header-profile .profile-text{display:flex;flex-direction:column;justify-content:center;gap:2px;align-items:flex-end}
+main>header #profileEmblem{border:0;padding:0;width:36px;height:36px}
+main>header .header-actions{justify-content:flex-end;gap:6px;flex-shrink:0}
+main>header .header-actions button{min-height:34px;padding:6px 10px;font-size:12px;text-decoration:none}
+.matrix-mode #contextSection{align-items:center;justify-content:space-between;gap:12px;padding:0 0 13px}.matrix-mode #contextSection>.grid{align-self:center;max-width:180px}.matrix-mode #roundIntro{margin:0}.matrix-mode #contextSection>.row:has(> :not([hidden])){align-self:center}
+#matrix th .person{justify-content:flex-start;padding:3px 2px;gap:3px;line-height:1.2}#matrix th .person img,.matrix-mode #matrixSection th:first-child .person img{margin:0 auto 2px}.matrix-mode #matrixSection #matrixContext{margin:0 0 12px}.matrix-mode #matrixSection th,.matrix-mode #matrixSection td{vertical-align:middle}
+.invite-mode main>header{justify-content:center;text-align:center}.invite-mode #headerTitle{text-align:center}.invite-mode .brand-title{justify-content:center}
+@media(max-width:820px){main>header .header-account{flex-direction:column;align-items:flex-end;gap:6px;max-width:48%}main>header .header-profile:not([hidden]){border-left:0;padding-left:0}main>header{gap:10px}}
+@media(max-width:480px){main>header{align-items:flex-start;padding:9px 0 12px;min-height:0}main>header .header-account{max-width:49%;gap:5px}.brand-title h1{font-size:16px}.brand-signature{font-size:10px;white-space:normal}main>header #profileEmblem{width:28px;height:28px}main>header .header-actions{flex-wrap:wrap;gap:5px}main>header .header-actions button{min-height:30px;font-size:11px;padding:4px 7px}.matrix-mode #contextSection>.grid{max-width:145px}}
