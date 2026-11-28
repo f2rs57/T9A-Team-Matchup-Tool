@@ -1,3 +1,8 @@
+MISE À JOUR 0.10.12 Beta — gestion indépendante des démonstrations.
+Dans Démos, chaque enregistrement possède Ouvrir, Copier le lien et Gérer (renommer, supprimer après confirmation, ouvrir). Le nom personnalisé est enregistré en base ; l’identifiant demoNN et le lien public local restent stables. Aucun enregistrement de démonstration dans les listes, sélecteurs ou gestion des tournois réels de l’administrateur. Les anciens liens locaux restent utilisables, même après suppression de l’enregistrement serveur ; ils ne sont pas révocables par conception. Le nom personnalisé est un libellé de gestion et ne remplace pas l’identifiant affiché au testeur.
+En démo locale : contexte fixe deder, capitaine du Luxembourg, Mercenaires - TUC, ronde 1, Bottleneck / Skull of Harald Redstub. Aucun sélecteur d’équipe, ronde ou scénario ni formulaire de rencontre ; les badges et le contexte de la matrice restent visibles. Les 30 estimations fictives, la saisie manuelle des six estimations deder et le bouton facultatif d’exemple guidé sont conservés. Les anciennes saisies locales sont reprises ; les identités et scénarios sont toujours issus du modèle. Les liens serveur historiques restent compatibles.
+GitHub uniquement si SQL 01 à 08 déjà installés : réutilisation des droits UPDATE/DELETE de la migration 02 et de la création SQL 08. Aucun SQL supplémentaire. Aucun changement de moteur ni des règles d’appariement.
+
 MISE À JOUR 0.10.11 Beta — Nouveau message de confirmation du Top Basher : « [joueur] est officiellement chauffeur de bus. À lui de rouler sur son adversaire ! 👍 ». Aucun changement de moteur ni de SQL.
 
 MISE À JOUR 0.10.10 Beta — Reformulation des deux confirmations du bus. Aucun changement de moteur ni de SQL.
