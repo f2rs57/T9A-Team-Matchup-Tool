@@ -170,3 +170,18 @@ main>header .header-account{max-width:49%;flex-shrink:0}main>header #profileIden
 
 /* v0.10.12 : actions de gestion réservées aux démonstrations. */
 .demo-item{flex-wrap:wrap}.demo-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.demo-actions button{white-space:nowrap}
+
+/* v0.10.14 : drapeau de signature discret. */
+.lux-flag{width:10px;height:6.67px}
+@media(max-width:480px){.lux-flag{width:9px;height:6px}}
+
+/* v0.10.16 : signature à côté de la version ; drapeau réduit de moitié. */
+.brand-meta{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:8px;row-gap:2px;margin-top:3px;}
+.brand-meta>small{font-size:11px;white-space:nowrap;}
+.brand-meta .brand-signature{display:inline-flex;align-items:center;gap:3px;white-space:nowrap;}
+.invite-mode .brand-meta{justify-content:center;}
+.brand-meta .lux-flag{width:5px;height:3.33px;filter:none;}
+@media(max-width:480px){.brand-meta{column-gap:5px;row-gap:1px}.brand-meta>small{font-size:10px}.brand-meta .lux-flag{width:4.5px;height:3px}}
+
+/* v0.10.16 — final visual identity; keep original IX Age banner styling. */
+.brand-meta .brand-signature{font-size:9px;gap:3px}.brand-meta .lux-flag{width:4.5px;height:3px}.brand-meta>small{font-size:11px}.tmt-brand-logo{width:56px;height:56px;flex-basis:56px}.sponsor-footer{display:flex;align-items:center;justify-content:center;gap:10px;opacity:.45;margin:3px auto 0}.site-brand .sponsor-logo{width:112px;height:auto;opacity:1}.site-brand .sponsor-seal{width:35px;height:auto;opacity:1}.sponsor-divider{height:25px;border-left:1px solid #ad946b}.admin-panel#adminPanelTournaments>.existing-tournaments{margin-top:22px;border-top:1px solid #ded5c0;padding-top:16px}@media(max-width:480px){.brand-meta .brand-signature{font-size:8px}.brand-meta>small{font-size:10px}.brand-meta .lux-flag{width:4px;height:2.67px}.tmt-brand-logo{width:32px;height:32px;flex-basis:32px}.site-brand .sponsor-logo{width:88px}.site-brand .sponsor-seal{width:27px}.sponsor-divider{height:20px}}

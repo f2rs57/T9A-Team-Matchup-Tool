@@ -1,5 +1,5 @@
-const VERSION='0.10.12', CACHE='t9a-shell-0112-beta-v1';
-const VERSIONED=['style.css','demo.js','app.js','pairing.css','pairing.js','pairing-engine.js','favicon.svg','apple-touch-icon.png','tmt-logo.webp'].map(f=>'./'+f+'?v='+VERSION);
+const VERSION='0.10.16', CACHE='t9a-shell-0116-beta-v1';
+const VERSIONED=['style.css','demo.js','app.js','pairing.css','pairing.js','pairing-engine.js','favicon.svg','apple-touch-icon.png','tmt-logo.webp','gatti-logo.png','gatti-approved.png','favicon.png'].map(f=>'./'+f+'?v='+VERSION);
 const FILES=['./index.html',...VERSIONED,'./favicon.ico','./favicon.ico?v='+VERSION,'./t9a-banner.png',...['global','balanced','high'].map(x=>'./emblems/strategy-'+x+'.webp?v='+VERSION),...['BH','DL','DE','DH','EOS','HE','ID','KOE','OK','ONG','SA','SE','UD','VC','VS','WDG'].map(x=>'./emblems/'+x+'.webp?v='+VERSION)];
 const URLS=new Set(FILES.map(f=>new URL(f,self.location.href).href));
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES.map(f=>new Request(new URL(f,self.location.href),{cache:'reload'})))).then(()=>self.skipWaiting())));

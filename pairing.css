@@ -115,3 +115,120 @@
 
 /* Top Bashers : même animation, accent vert discret. */
 .p-truck.p-basher{background:#e9eddf;border-color:#bdc8aa;}
+
+/* v0.10.14 : retrouver le tapis centré de 0.10.12 ; matrice compacte, mobile en dessous. */
+.p-board .p-matrix-wrap{overflow:visible;margin-top:5px;}
+.p-board .p-matrix{min-width:0;width:100%;border-spacing:3px;}
+.p-board .p-matrix th:first-child{position:static;}
+.p-board .p-matrix th,.p-board .p-matrix td{height:34px;padding:2px 1px;min-width:0;overflow-wrap:anywhere;}
+.p-board .p-matrix .person{min-width:0;min-height:0;white-space:normal;overflow-wrap:anywhere;}
+.p-board .p-matrix .person img{flex:none;}
+@media(min-width:851px){
+ main:has(#pairingDialog:not([hidden])){padding-top:12px;}
+ main:has(#pairingDialog:not([hidden]))>header{min-height:0;padding:4px 0 7px;margin-bottom:6px;}
+ main:has(#pairingDialog:not([hidden])) .workspace-tabs{margin-bottom:8px;}
+ main:has(#pairingDialog:not([hidden])) #contextSection{padding-top:4px;padding-bottom:4px;margin-bottom:4px;}
+ main:has(#pairingDialog:not([hidden])) #roundIntro{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+ main:has(#pairingDialog:not([hidden])) #roundTitle{margin:0;}
+ main:has(#pairingDialog:not([hidden])) .demo-banner{margin-bottom:6px;}
+ #pairingDialog:not([hidden]){gap:6px;}
+ #pairingDialog .p-strategies label{min-height:62px;padding:5px 8px;}
+ #pairingDialog .p-strategy-art,#pairingDialog .p-strategy-art .p-strategy-emblem{width:50px;height:50px;flex-basis:50px;}
+ #pairingDialog .p-demo-guide{margin:2px 0;padding:7px 10px;}
+ .p-board .p-matrix tbody .person{display:grid;grid-template-columns:23px minmax(0,1fr);grid-template-areas:"icon name" "code name";gap:0 2px;padding:0;}
+ .p-board .p-matrix tbody .person img{grid-area:icon;width:13px;height:13px;}
+ .p-board .p-matrix tbody .person>span{grid-area:name;}
+ .p-board .p-matrix tbody .person small{grid-area:code;white-space:nowrap;}
+ .p-board .p-matrix tbody td,.p-board .p-matrix tbody th{height:29px;}
+ .p-board .p-matrix-panel{padding:6px;}
+}
+@media(min-width:851px) and (max-height:900px){
+ #pairingDialog{--p-card-h:86px;}
+ .p-board{gap:4px;}
+ .p-board .p-center{gap:6px;}
+ .p-board .p-lane{row-gap:2px;}
+ .p-board .p-pool{padding:4px 6px;}
+ .p-board .p-team-edge{padding:1px 0;}
+}
+@media(min-width:851px) and (max-height:800px){
+ #pairingDialog{--p-card-h:76px;}
+ #pairingDialog .p-strategies label{min-height:52px;padding:3px 6px;}
+ #pairingDialog .p-strategy-art,#pairingDialog .p-strategy-art .p-strategy-emblem{width:40px;height:40px;flex-basis:40px;}
+ .p-board .p-matrix{border-spacing:2px;}
+ .p-board .p-matrix tbody td,.p-board .p-matrix tbody th{height:24px;padding:1px;}
+ .p-board .p-matrix tbody .person img{width:11px;height:11px;}
+}
+@media(max-width:850px){
+ .p-active-board .p-layout{display:contents;}
+ .p-active-board .p-pool.away{order:0;}
+ .p-active-board .p-team-edge.away{order:1;}
+ .p-active-board .p-center{order:2;}
+ .p-active-board .p-team-edge.own{order:3;}
+ .p-active-board .p-pool.own{order:4;}
+ .p-active-board .p-help,.p-active-board .p-advice,.p-active-board .p-truck{order:5;}
+ .p-active-board .p-controls{order:6;position:static;padding:0;}
+ .p-active-board .p-matrix-panel{order:7;}
+ .p-active-board .p-results{order:8;}
+ .p-active-board .p-legend,.p-active-board>.p-footnote{order:9;}
+ .p-board .p-matrix{font-size:11px;border-spacing:2px;}
+ .p-board .p-matrix td,.p-board .p-matrix th{height:36px;padding:2px 1px;}
+}
+@media(max-width:520px){
+ .p-board .p-matrix{font-size:clamp(8px,2.65vw,11px);border-spacing:2px;}
+ .p-board .p-matrix .person{font-size:clamp(7px,2.15vw,9px);line-height:1.08;padding:1px 0;}
+ .p-board .p-matrix .person small{font-size:7px;}
+ .p-board .p-matrix .person img{width:13px;height:13px;}
+ .p-board .p-matrix td,.p-board .p-matrix th{height:34px;padding:2px 0;}
+ .p-board .p-matrix-check{font-size:8px;right:1px;top:0;}
+ .p-board .p-matrix-panel{padding:5px;}
+ .p-board .p-cards{display:flex;flex-wrap:nowrap;gap:4px;}
+ .p-board .p-cards .p-card{flex:1 1 0;min-width:0;width:100%;max-width:62px;}
+ .p-board .p-cards[data-count='8'],.p-board .p-cards[data-count='7']{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));justify-items:center;}
+}
+/* Écrans d'ordinateur bas : réduire les espaces, jamais déplacer les pools. */
+@media(min-width:851px) and (max-height:900px){
+ #pairingDialog:not([hidden]){display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px;}
+ #pairingDialog:not([hidden])>.p-head{grid-column:1;}
+ #pairingDialog:not([hidden])>.p-summary{grid-column:2;}
+ #pairingDialog:not([hidden])>:not(.p-head):not(.p-summary){grid-column:1/-1;}
+ .p-board .p-matrix th:first-child{width:88px;}
+ .p-board .p-matrix-heading h3{font-size:17px;}
+ .p-board .p-matrix-panel>.p-footnote{font-size:10px;line-height:1.15;}
+ .p-board .p-matrix thead .person img{width:13px;height:13px;}
+ .p-board .p-matrix thead .person{font-size:9px;}
+}
+@media(min-width:851px) and (max-height:800px){
+ main:has(#pairingDialog:not([hidden])){margin-top:5px;padding-top:5px;}
+ main:has(#pairingDialog:not([hidden])) .demo-banner{padding:3px 10px;margin-bottom:3px;}
+ main:has(#pairingDialog:not([hidden]))>header{padding-top:0;padding-bottom:3px;margin-bottom:3px;}
+ #pairingDialog .p-strategies label{gap:5px;min-height:48px;}
+ #pairingDialog .p-strategy-copy{gap:1px;}
+ #pairingDialog .p-strategy-detail{font-size:10px;line-height:1.15;}
+ #pairingDialog .p-demo-guide{padding:3px 9px;margin:0;}
+ .p-board .p-matrix-panel{padding:4px;}
+ .p-board .p-matrix-wrap{margin-top:2px;}
+ .p-board .p-matrix tbody td,.p-board .p-matrix tbody th{height:22px;}
+ .p-board .p-matrix tbody .person{font-size:9px;}
+ .p-board .p-matrix tbody .person small{font-size:7px;}
+ .p-board .p-matrix thead .person img{width:11px;height:11px;}
+ .p-board .p-matrix thead th{padding:1px;}
+ .p-board .p-matrix-panel[data-size='8'] .p-matrix tbody td,.p-board .p-matrix-panel[data-size='8'] .p-matrix tbody th{height:20px;}
+}
+@media(min-width:851px) and (min-height:801px) and (max-height:900px){
+ .p-board .p-matrix-panel[data-size='8'] .p-matrix tbody td,.p-board .p-matrix-panel[data-size='8'] .p-matrix tbody th{height:24px;padding:1px;}
+ .p-board .p-matrix-panel[data-size='8'] .p-matrix tbody .person img{width:11px;height:11px;}
+}
+
+/* v0.10.16 : sur mobile/tablette uniquement, matrice entre les deux rangées de slots. */
+@media(max-width:850px){
+ .p-active-board .p-center{display:contents;}
+ .p-active-board .p-lane.away{order:2;}
+ .p-active-board .p-matrix-panel{order:3;}
+ .p-active-board .p-lane.own{order:4;}
+ .p-active-board .p-team-edge.own{order:5;}
+ .p-active-board .p-pool.own{order:6;}
+ .p-active-board .p-help,.p-active-board .p-advice,.p-active-board .p-truck{order:7;}
+ .p-active-board .p-controls{order:8;}
+ .p-active-board .p-results{order:9;}
+ .p-active-board .p-legend,.p-active-board>.p-footnote{order:10;}
+}
