@@ -108,3 +108,11 @@ Installer SQL 08 dans Supabase AVANT de déployer le ZIP.
 L’administrateur génère demo01, demo02, etc. dans la section Démonstrations. Chaque création est atomique : une ronde, deux équipes, 12 listes Inter-Régions 2026 (pseudonymes uniquement), 30 estimations fictives. Le capitaine deder a 6 estimations à saisir. Le numéro affiché provient de la base après connexion. Les tokens ne sont pas dérivés du numéro. Les liens ne sont pas stockés en clair sur le serveur ; après actualisation de l’administration, renouveler un lien pour en obtenir un nouveau. Ne partagez pas un même lien capitaine entre plusieurs testeurs. Pour tester en restant administrateur, utiliser une fenêtre privée distincte. Supprimer une démo via Gérer les tournois ; ne pas supprimer un tournoi réel.
 Le capitaine dispose d’un onglet Liens contenant la section existante, un lien commun, aucune invitation individuelle nouvelle. Capitaine en premier, lignes uniformes, bouton Copier espacé.
 Traductions non incluses.
+
+
+VERSION 0.10.2 BETA
+- Administration : Imports / Tournois / Liens / Démonstrations.
+- Les liens capitaine ont une sélection tournoi/équipe indépendante des rondes.
+- État des liens via t9a_list_invitations ; jetons en mémoire uniquement, renouvellement si perdu.
+- Les tournois démo ne figurent pas dans les sélecteurs de liens réels. Gestion via Démonstrations.
+- Aucune migration supplémentaire si SQL 01 à 08 déjà installés.
