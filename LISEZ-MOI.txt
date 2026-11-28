@@ -1,3 +1,23 @@
+MISE À JOUR 0.10.11 Beta — Nouveau message de confirmation du Top Basher : « [joueur] est officiellement chauffeur de bus. À lui de rouler sur son adversaire ! 👍 ». Aucun changement de moteur ni de SQL.
+
+MISE À JOUR 0.10.10 Beta — Reformulation des deux confirmations du bus. Aucun changement de moteur ni de SQL.
+
+MISE À JOUR 0.10.8 Beta — Correction du libellé de confirmation : « le chauffeur du bus ». Aucun changement fonctionnel ni SQL.
+
+MISE À JOUR 0.10.7 Beta — Le bus remplace le camion dans toutes les suggestions et confirmations de l’assistant. Les Top Bashers deviennent chauffeurs du bus de l’équipe. Aucun changement de moteur ni de SQL.
+
+MISE À JOUR 0.10.6 Beta — Top Bashers : message « Mettre [joueur] au volant du camion 👍 » si une recommandation courante implique un 17-20, conditionnel avant validation ; remerciement/encouragement après confirmation du match. Les scores restent des estimations. Même calcul et même animation d’entrée que les sacrifices. Fonctionne en tournoi réel et en démo.
+MISE À JOUR 0.10.6 Beta — noms des équipes au-dessus et au-dessous de la zone centrale, justification dynamique des sacrifices 0-3 en tournoi réel et en démonstration. Comparaison maximin du choix conseillé avec la meilleure alternative sans ce choix, selon la stratégie active et les matchs restant à jouer ; bonus pondérés et priorités lexicographiques explicités. Une égalité ne rend pas le sacrifice nécessaire. Aucun changement de recommandations, de données ni de SQL.
+Chaque suggestion (défenseur, paire d’attaquants, attaquant adverse à retenir) affiche son objectif, sa valeur maximin et la meilleure autre action possible. Pour une offre, la comparaison générale exclut uniquement la paire recommandée ; le message de sacrifice compare aussi avec une offre sans le joueur concerné. Aucun score pondéré n’est présenté comme un score de bataille.
+
+MISE À JOUR 0.10.5 Beta — logo TMT C IX transparent dans l’en-tête et démonstration guidée du sacrifice. GitHub uniquement si SQL 01 à 08 déjà installés.
+Le mode local démarre avec 30 estimations fictives, deder non renseigné. Le bouton facultatif dans Estimations charge le scénario complet, après confirmation de la réinitialisation de cette démo locale seulement. Les trois stratégies recommandent Gregus comme défenseur, puis Germ1painting contre Gregus dans le scénario guidé (0-3). Les autres décisions restent libres. Aucun changement de moteur ni de SQL.
+MISE À JOUR 0.10.4 Beta — favicon C IX transparent, drapeau luxembourgeois animé, démonstration locale.
+Le lien #demo=demo01&local=1 lance une session indépendante dans chaque onglet, sans Supabase. Rafraîchir conserve les saisies de cet onglet ; fermer l’onglet peut les perdre. La numérotation administrateur utilise encore SQL 08 (création de l’enregistrement de démo) ; les nouvelles URL ne contiennent aucun jeton et sont publiques. Les anciennes invitations serveur restent valables selon leurs règles d’origine. Supprimer un enregistrement ne révoque pas une URL locale. Les 12 listes exemples sont incluses dans les fichiers publics ; aucun véritable résultat ni estimation privée n’est intégré. Les liens d’équipe réels sont désactivés dans la démo. Le reste de l’application reste inchangé.
+
+VERSION 0.10.3 BETA — TMT - Team Matchup Tool / MESSAGE « SOUS LE CAMION »
+Nouveau nom dans l’en-tête et le titre du navigateur ; dépôt, stockage et base inchangés. Seuil retenu : 0-3. Message conditionnel si une recommandation implique cette fourchette (jetée : une branche défavorable du calcul, attaquant : si retenu). Remerciement après validation effective des appariements 0-3. Aucun changement de stratégie, de SQL ou de noms de fichiers.
+
 VERSION 0.10.0 Beta — bêta privée. Navigation commune Résumé / Estimations, Appariement réservé au capitaine. Onglets alignés à gauche, matrice intégrée et tapis en ligne. Les anciens liens directs de matrice restent en lecture seule. Accès et choix de rencontre dans le Résumé du capitaine. Logo de faction séparé par un filet ; fioritures de pied de page et losange ornemental. Médaillons fournis par l’utilisateur, recadrés sans les rubans afin que les libellés restent lisibles en HTML. Noms français et descriptions des stratégies conservés ; moteur et données inchangés. Migration SQL 07 déjà installée requise pour l’identification des capitaines ; aucun SQL supplémentaire. Les appariements restent sauvegardés localement. Tester les deux rôles et la synchronisation en production.
 
 MISE A JOUR 0.9.32 : alignements, Matrice de l’équipe, objectifs des trois stratégies, pictogrammes bouclier/balance/épée. Illustrations précédentes conservées ; moteur inchangé. Aucun SQL.

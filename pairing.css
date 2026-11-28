@@ -95,3 +95,23 @@
 #pairingDialog .p-head h2{font-size:24px}#pairingDialog .p-board{min-width:0}#pairingDialog .p-strategies{margin-bottom:2px}
 #pairingDialog .p-strategy-art{width:70px;height:70px;flex-basis:70px}#pairingDialog .p-strategy-art .p-strategy-emblem{width:70px;height:70px}
 @media(max-width:720px){#pairingDialog .p-strategy-art{width:50px;height:50px;flex-basis:50px}#pairingDialog .p-strategy-art .p-strategy-emblem{width:50px;height:50px}}
+
+/* Discreet sacrifice messages: no change to the card states or animations. */
+.p-truck{border:1px solid #d5c6a9;border-radius:8px;background:#f5efe3;padding:8px 12px;text-align:center;display:grid;gap:6px;color:var(--ink,#493b2d)}.p-truck p{margin:0;font-size:12px;line-height:1.45}.p-truck small{display:block;color:var(--muted);font-size:11px;font-weight:normal}.p-truck strong{font-weight:600}
+
+/* Sacrifice notice: subtle entrance, no change to the recommendation halo. */
+.p-truck{animation:p-truck-enter .42s ease-out both}@keyframes p-truck-enter{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.p-truck{animation:none}}
+
+/* v0.10.10 — noms des équipes de part et d’autre de la zone centrale. */
+.p-board .p-team-edge{margin:0;text-align:center;display:flex;align-items:center;justify-content:center;gap:12px;color:#625139;font:700 18px Georgia,serif;line-height:1.2;padding:3px 0;overflow-wrap:anywhere;}
+.p-team-edge:before,.p-team-edge:after{content:'';height:1px;background:#d7c8aa;width:60px;flex-shrink:1;}
+.p-board .p-lane-title{color:#786b56;justify-content:space-between;font-weight:400;}
+.p-board .p-pool{padding:5px 6px 7px;}
+.p-truck small{max-width:95ch;margin:3px auto 0;line-height:1.45;}
+@media(max-width:520px){.p-board .p-team-edge{font-size:15px;gap:8px}.p-team-edge:before,.p-team-edge:after{width:26px}}
+
+/* Explication calculée de chaque recommandation. */
+.p-advice{border:1px solid #d5c6a9;border-radius:8px;background:#f5efe3;padding:9px 12px;text-align:center;display:grid;gap:4px;color:var(--ink,#493b2d);font-size:12px;line-height:1.45}.p-advice small{display:block;color:var(--muted);font-size:11px;max-width:95ch;margin:0 auto}.p-advice strong{font-weight:600}
+
+/* Top Bashers : même animation, accent vert discret. */
+.p-truck.p-basher{background:#e9eddf;border-color:#bdc8aa;}
