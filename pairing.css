@@ -232,3 +232,76 @@
  .p-active-board .p-results{order:9;}
  .p-active-board .p-legend,.p-active-board>.p-footnote{order:10;}
 }
+
+/* v0.10.18 — proportion carte 5:7, sans changement de structure du tapis. */
+#pairingDialog{--p-card-h:126px;--p-card-w:90px;}
+@media(min-width:851px){
+ .p-board .p-layout{grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:18px;}
+ .p-board .p-matrix{font-size:14px;}
+ .p-board .p-matrix .person{font-size:11px;}
+ .p-board .p-matrix tbody td,.p-board .p-matrix tbody th{height:34px;}
+ .p-board .p-matrix thead th{height:43px;}
+ .p-board .p-matrix th:first-child{width:clamp(94px,11vw,132px);}
+}
+@media(min-width:851px) and (max-height:900px){
+ #pairingDialog{--p-card-h:112px;--p-card-w:80px;}
+ .p-board .p-matrix tbody td,.p-board .p-matrix tbody th{height:30px;}
+ .p-board .p-matrix-panel[data-size='8'] .p-matrix tbody td,.p-board .p-matrix-panel[data-size='8'] .p-matrix tbody th{height:24px;}
+}
+@media(min-width:851px) and (max-height:800px){
+ #pairingDialog{--p-card-h:98px;--p-card-w:70px;}
+ .p-board .p-matrix tbody td,.p-board .p-matrix tbody th{height:26px;}
+ .p-board .p-matrix-panel[data-size='8'] .p-matrix tbody td,.p-board .p-matrix-panel[data-size='8'] .p-matrix tbody th{height:20px;}
+}
+@media(min-width:851px) and (max-width:1000px){.p-board .p-layout{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:10px;}#pairingDialog{--p-card-w:65px;--p-card-h:91px;}}
+@media(max-width:850px){#pairingDialog{--p-card-w:72px;--p-card-h:100.8px;}}
+@media(max-width:520px){
+ #pairingDialog{--p-card-w:60px;--p-card-h:84px;}
+ .p-board .p-cards .p-card{max-width:60px;min-height:0;height:auto;max-height:none;aspect-ratio:5/7;}
+ .p-board .p-cards[data-count='7'] .p-card,.p-board .p-cards[data-count='8'] .p-card{width:100%;max-width:60px;}
+}
+/* Feedback indépendant du rendu, sans capture de clics ni déplacement du tapis. */
+.p-selection-toast{position:fixed;inset:0;z-index:2147483640;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px;pointer-events:none;}
+.p-selection-message{box-sizing:border-box;max-width:min(460px,100%);width:max-content;padding:17px 22px;background:#f8efdd;border:1px solid #bca27b;border-radius:12px;box-shadow:0 10px 40px #48352245;text-align:center;color:#493b2d;animation:p-selection-pop .22s ease-out both;}
+.p-selection-message strong{display:block;font:700 19px/1.3 Georgia,serif;}
+.p-selection-message small{display:block;margin-top:6px;color:#685d4b;font-size:12px;line-height:1.35;}
+.p-selection-basher{background:#e9eddf;border-color:#aab995;color:#344b2e;}
+@keyframes p-selection-pop{from{opacity:0;transform:scale(.91)}to{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.p-selection-message{animation:none;}}
+/* Préserver l'affichage complet de la matrice sur les écrans de faible hauteur. */
+@media(min-width:1001px) and (max-height:900px){
+ #pairingDialog .p-board{gap:3px;}
+ #pairingDialog .p-strategies label{min-height:54px;padding:4px 7px;}
+ #pairingDialog .p-demo-guide{padding:3px 9px;margin:0;}
+ #pairingDialog .p-board .p-pool{padding:3px 6px;}
+}
+@media(min-width:1001px) and (max-height:800px){
+ #pairingDialog{--p-card-h:91px;--p-card-w:65px;}
+ #pairingDialog .p-strategies label{min-height:46px;padding:2px 6px;}
+ #pairingDialog .p-board .p-matrix tbody td,#pairingDialog .p-board .p-matrix tbody th{height:24px;}
+ #pairingDialog .p-board .p-matrix-panel[data-size='8'] .p-matrix tbody td,#pairingDialog .p-board .p-matrix-panel[data-size='8'] .p-matrix tbody th{height:20px;}
+}
+
+/* v0.10.20 — teinte de faction uniforme : 5 % au repos, 10 % au survol ou à la sélection.
+   Le halo central recommandé est indépendant du fond et reste localisé autour de l'emblème. */
+.p-board .p-card:not(.selected):not(.recommended),
+.p-board .p-card.recommended:not(.selected){
+ background:color-mix(in srgb,#ede9df 95%,var(--faction-tint,#ede9df) 5%);
+}
+.p-board .p-card.selected:not(.recommended),
+.p-board .p-card.recommended.selected,
+.p-board .p-card:not(.selected):not(.recommended):hover:not(:disabled),
+.p-board .p-card.recommended:not(.selected):hover:not(:disabled){
+ background:color-mix(in srgb,#ede9df 90%,var(--faction-tint,#ede9df) 10%);
+}
+.p-board .p-card.recommended .p-aura{
+ position:absolute;inset:19% 5% 14%;
+ background:radial-gradient(ellipse at center,#ffe5a0de 0%,#ffd777a6 28%,#e9b64d48 50%,transparent 73%);
+ animation:p-core-v20 1.8s ease-in-out infinite;
+ z-index:-1;pointer-events:none;
+}
+@keyframes p-core-v20{
+ 0%,100%{opacity:1;transform:scale(1.05);}
+ 50%{opacity:.52;transform:scale(.88);}
+}
+@media(prefers-reduced-motion:reduce){.p-board .p-card.recommended .p-aura{animation:none;opacity:.85;}}

@@ -58,7 +58,7 @@ const labels=['0-3','4-6','7-9','10','11-13','14-16','17-20'];
 const estimateBounds=[[0,3],[4,6],[7,9],[10,10],[11,13],[14,16],[17,20]];
 const estimateMidpoints=estimateBounds.map(([lo,hi])=>(lo+hi)/2);
 const factionCodes=Object.fromEntries(factions.map((f,i)=>[f,['BH','DL','DE','DH','EOS','HE','ID','KOE','OK','ONG','SA','SE','UD','VC','VS','WDG'][i]]));
-function iconFor(p){const code=factionCodes[p.faction];if(!code)return el('span','?');const img=el('img',null,'faction-icon');img.src='./emblems/'+code+'.webp?v=0.10.17';img.alt='';return img}
+function iconFor(p){const code=factionCodes[p.faction];if(!code)return el('span','?');const img=el('img',null,'faction-icon');img.src='./emblems/'+code+'.webp?v=0.10.20';img.alt='';return img}
 function emblem(p){const e=el('span',null,'emblem');e.append(iconFor(p));return e}
 function color(v){const i=labels.indexOf(v);return i<0?'':'c'+i}
 function person(p){const b=el('button',null,'person');b.type='button';b.append(iconFor(p),playerNameNode(p),el('small',factionLabel(p.faction)));b.title=p.name+' · '+factionLabel(p.faction);b.onclick=()=>{$('listTitle').textContent=p.name+' · '+factionLabel(p.faction)+' · '+(p.army_points??'—')+' pts';$('listText').textContent=p.army_list;$('listDialog').showModal()};return b}

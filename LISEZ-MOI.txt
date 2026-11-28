@@ -1,3 +1,9 @@
+MISE À JOUR 0.10.20 Beta — cartes d’appariement : voile de faction 5 % au repos (y compris les recommandations), 10 % au survol ou à la sélection sur le même fond neutre. WDG noir pur. Halo central doré pulsant renforcé, contour animé conservé ; halo statique en mode mouvement réduit. Aucun changement de disposition, du moteur ou de Supabase. Cache actualisé.
+
+MISE À JOUR 0.10.19 Beta — les cartes recommandées conservent exactement leur fond teinté de faction, y compris si sélectionnées. Contour animé et halo doré extérieur conservés ; suppression de la lueur interne qui altérait la teinte. Aucune modification du moteur, du layout ou de Supabase. Cache actualisé.
+
+MISE À JOUR 0.10.18 Beta — matrice ordinateur élargie, cartes et slots au ratio 5:7, conseils concis. Notifications sacrifice/Top Basher temporaires au clic et à la validation effective des matchs, aucun affichage automatique au calcul ni au rechargement. Moteur inchangé, aucun SQL. Cache actualisé.
+
 MISE À JOUR 0.10.17 Beta — nom/numéro des démos libre dès la création, suggestion du premier numéro disponible, ordre naturel des noms, validation des doublons côté interface, renommage sans changement du UUID ni du demo_number technique. Favicon sans fond carré, IX doré épais séparé des silhouettes. Aucun SQL supplémentaire. Cache actualisé.
 
 MISE À JOUR 0.10.16 Beta — matrice entre les deux rangées de slots sur téléphone/tablette ; disposition ordinateur inchangée. Logo TMT validé rouge/bleu, favicon IX doré superposé sans contour, signature miniature après version. Pied de page Gatti Travel et sceau à 45 % ; bandeau IX Age inchangé. Administration : Imports fusionné avec Tournois ; Liens par tournoi et équipe sélectionnée ; Démos, identifiant masqué, URL UUID et compatibilité des anciens liens demoXX. Aucun SQL supplémentaire : demo_number reste interne pour la migration 08. Cache actualisé.

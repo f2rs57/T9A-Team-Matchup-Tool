@@ -1,4 +1,4 @@
-const VERSION='0.10.17', CACHE='t9a-shell-0117-beta-v1';
+const VERSION='0.10.20', CACHE='t9a-shell-0120-beta-v1';
 const VERSIONED=['style.css','demo.js','app.js','pairing.css','pairing.js','pairing-engine.js','favicon.svg','apple-touch-icon.png','tmt-logo.webp','gatti-logo.png','gatti-approved.png','favicon.png'].map(f=>'./'+f+'?v='+VERSION);
 const FILES=['./index.html',...VERSIONED,'./favicon.ico','./favicon.ico?v='+VERSION,'./t9a-banner.png',...['global','balanced','high'].map(x=>'./emblems/strategy-'+x+'.webp?v='+VERSION),...['BH','DL','DE','DH','EOS','HE','ID','KOE','OK','ONG','SA','SE','UD','VC','VS','WDG'].map(x=>'./emblems/'+x+'.webp?v='+VERSION)];
 const URLS=new Set(FILES.map(f=>new URL(f,self.location.href).href));
